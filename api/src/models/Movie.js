@@ -1,47 +1,61 @@
 const { DataTypes } = require('sequelize');
-// Exportamos una funcion que define el modelo
-// Luego le injectamos la conexion a sequelize.
+
+// Table cine.movies{
+//   movie_id int [pk, increment]
+//   title varchar
+//   description varchar
+//   poster varchar
+//   duration int
+//   classification varchar
+//   cast schema
+//   director varchar
+//   writter varchar
+//   language varchar
+//   display_id int [ref: <> cine.displays.description] <--- lo vemos en las relaciones
+// }
+
 module.exports = (sequelize) => {
-  // defino el modelo
   sequelize.define('Movie', {
-    id: {
-      type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4,
-      allowNull: false,
-      primaryKey: true,
+    movie_id : {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true
     },
-    name: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    heightMin: {
-      type: DataTypes.STRING,
-      allowNull: false,
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: true,
     },
-    heightMax: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    weightMin: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    weightMax: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    life_span: {
+    poster: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    image: {
+    duration: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    classification: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    createdInDb: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: true,
-    }
+    cast: {
+      type: DataTypes.ARRAY(DataTypes.STRING),
+      allowNull: true,
+    },
+    director: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    writter: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    language: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
   });
 };

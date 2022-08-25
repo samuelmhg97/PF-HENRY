@@ -1,25 +1,20 @@
 const { DataTypes } = require('sequelize');
 
-// Table cine.users {
-//   user_id int [pk, increment]
-//   username varchar
-//   email varchar
-// }
+// Table cine.displays{
+//     display_id int [pk, increment]
+//     description varchar
+//   }
 
 module.exports = (sequelize) => {    
-    sequelize.define('User', {
-      user_id : {
+    sequelize.define('Display', {
+      dispaly_id : {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true
       },
-      name: {
+      description: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      email: {
-        type: DataTypes.STRING,
-        allowNull: false,        
-      }
     });
   };

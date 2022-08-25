@@ -1,8 +1,32 @@
+const genres = 
+[
+    {"id":28,"name":"Action"},
+    {"id":12,"name":"Adventure"},
+    {"id":16,"name":"Animation"},
+    {"id":35,"name":"Comedy"},
+    {"id":80,"name":"Crime"},
+    {"id":99,"name":"Documentary"},
+    {"id":18,"name":"Drama"},
+    {"id":10751,"name":"Family"},
+    {"id":14,"name":"Fantasy"},
+    {"id":36,"name":"History"},
+    {"id":27,"name":"Horror"},
+    {"id":10402,"name":"Music"},
+    {"id":9648,"name":"Mystery"},
+    {"id":10749,"name":"Romance"},
+    {"id":878,"name":"Science Fiction"},
+    {"id":10770,"name":"TV Movie"},
+    {"id":53,"name":"Thriller"},
+    {"id":10752,"name":"War"},
+    {"id":37,"name":"Western"}
+]
+
 const movies = 
 [{
     "adult":false,
     "backdrop_path":"/ugS5FVfCI3RV0ZwZtBV3HAV75OX.jpg",
-    "genre_ids":[16,878,28],"id":610150,
+    "genre_ids":[16,878,28],
+    "id":610150,
     "original_language":"ja",
     "original_title":"ドラゴンボール超 スーパーヒーロー",
     "overview":"The Red Ribbon Army, an evil organization that was once destroyed by Goku in the past, has been reformed by a group of people who have created new and mightier Androids, Gamma 1 and Gamma 2, and seek vengeance against Goku and his family.",
