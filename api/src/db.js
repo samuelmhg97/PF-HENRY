@@ -28,12 +28,35 @@ let entries = Object.entries(sequelize.models);
 let capsEntries = entries.map((entry) => [entry[0][0].toUpperCase() + entry[0].slice(1), entry[1]]);
 sequelize.models = Object.fromEntries(capsEntries);
 
-const { User, Movie } = sequelize.models;
+const { User, Movie, Detail, Display, Genre, Product, Purchease, PurcheaseStatus, Rating, Room, Schedule} = sequelize.models;
 
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
-Movie.belongsToMany(User, { through: 'MovieUser' });
-User.belongsToMany(Movie, { through: 'MovieUser' });
+
+Rating.hasOne(Movie)
+Rating.hasOne(User)
+User.hasMany(Rating)
+Movie.hasMany(Rating)
+PurcheaseStatus.hasMany(Purchease);
+Purchease.hasOne(PurcheaseStatus);
+User.hasMany(Purchease);
+Purchease.hasOne(User);
+Purchease.hasMany(Detail);
+Detail.hasOne(Purchease);
+Detail.belongsToMany(Product, { through: 'DetailProduct' });
+Product.belongsToMany(Detail, { through: 'DetailProduct' });
+Movie.belongsToMany(Genre, { through: 'MovieGenre' });
+Genre.belongsToMany(Movie, { through: 'MovieGenre' });
+Movie.belongsToMany(Display, { through: 'MovieDisplay' });
+Display.belongsToMany(Movie, { through: 'MovieDisplay' });
+Room.hasOne(Display)
+Display.hasMany(Room)
+Schedule.hasOne(Room)
+Schedule.hasOne(Movie)
+Schedule.hasOne(Display) // para mi ya la trae la room //
+Room.hasMany(Schedule)
+Movie.hasMany(Schedule)
+Display.hasMany(Schedule) // para mi ya estan relacionados por medio de la room//
 
 
 module.exports = {
