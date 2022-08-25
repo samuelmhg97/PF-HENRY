@@ -1,4 +1,4 @@
-const { DataTypes } = require('sequelize');
+const { DataTypes } = require("sequelize");
 
 // Table cine.users {
 //   user_id int [pk, increment]
@@ -6,20 +6,24 @@ const { DataTypes } = require('sequelize');
 //   email varchar
 // }
 
-module.exports = (sequelize) => {    
-    sequelize.define('User', {
-      user_id : {
-        type: DataTypes.INTEGER,
-        autoIncrement: true,
-        primaryKey: true
+module.exports = (sequelize) => {
+  sequelize.define("User", {
+    user_id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+    },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true, // colocada la constrain para garantizar que no haya correos repetidos (no se que tan ultil sea)
+      validate: {
+        isEmail: true, // valida que sea un correo correcto
       },
-      name: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      email: {
-        type: DataTypes.STRING,
-        allowNull: false,        
-      }
-    });
-  };
+    },
+  });
+};

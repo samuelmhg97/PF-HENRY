@@ -1,39 +1,45 @@
-const { DataTypes } = require('sequelize');
+const { DataTypes } = require("sequelize");
 
-// Table purchease.detail{
+// Table purchase.detail{
 //     detail_id int [pk, increment]
-//     purchease_id <-- de la tabla de las compras
+//     purchase_id <-- de la tabla de las compras
 //     schedule_id <--- de la tabla de las proyecciones
-//     quantity  <-- cantidad de tickes
+//     quantity  <-- cantidad de tickets
 //     product_id <-- de la tabla de productos
 //     quantity_product <-- cantidad de productos comprados
 //   }
 
-module.exports = (sequelize) => {    
-    sequelize.define('Detail', {
-      detail_id : {
-        type: DataTypes.INTEGER,
-        autoIncrement: true,
-        primaryKey: true,
+module.exports = (sequelize) => {
+  sequelize.define("Detail", {
+    detail_id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+    },
+    purchase_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    schedule_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    quantity: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        isInt: true,
       },
-      purchease_id : {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+    },
+    product_id: {
+      type: DataTypes.INTEGER,
+    },
+    product_quantity: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        isInt: true,
       },
-      schedule_id : {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
-      quantity: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
-      product_id : {
-        type: DataTypes.INTEGER,
-      },
-      product_quantity: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
-    });
-  };
+    },
+  });
+};

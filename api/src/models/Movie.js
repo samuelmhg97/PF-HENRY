@@ -1,4 +1,4 @@
-const { DataTypes } = require('sequelize');
+const { DataTypes } = require("sequelize");
 
 // Table cine.movies{
 //   movie_id int [pk, increment]
@@ -15,51 +15,53 @@ const { DataTypes } = require('sequelize');
 // }
 
 module.exports = (sequelize) => {
-  sequelize.define('Movie', {
-    movie_id : {
+  sequelize.define("Movie", {
+    movie_id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
-      primaryKey: true
+      primaryKey: true,
     },
     title: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false, // Se eliminaron las lineas de allowNull: true porque es el valor por defecto
     },
     description: {
       type: DataTypes.TEXT,
-      allowNull: true,
     },
     poster: {
       type: DataTypes.STRING,
-      allowNull: true,
+      validate: {
+        // asi no hay que cargar el elemento en ninguna parte, solo se llama de otro sitio
+        isUrl: true,
+      },
     },
     teaser: {
       type: DataTypes.STRING,
-      allowNull: true,
+      validate: {
+        // asi no hay que cargar el elemento en ninguna parte, solo se llama de otro sitio
+        isUrl: true,
+      },
     },
     duration: {
       type: DataTypes.INTEGER,
-      allowNull: true,
+      validate: {
+        isInt: true,
+      },
     },
     classification: {
       type: DataTypes.STRING,
-      allowNull: true,
     },
     cast: {
       type: DataTypes.ARRAY(DataTypes.STRING),
-      allowNull: true,
     },
     director: {
       type: DataTypes.STRING,
-      allowNull: true,
     },
     writter: {
       type: DataTypes.STRING,
-      allowNull: true,
     },
     language: {
       type: DataTypes.STRING,
-      allowNull: true,
     },
   });
 };

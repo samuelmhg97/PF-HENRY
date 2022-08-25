@@ -1,4 +1,4 @@
-const { DataTypes } = require('sequelize');
+const { DataTypes } = require("sequelize");
 
 // Table cine.schedules {
 //     schedule_id int [pk, increment]
@@ -11,32 +11,35 @@ const { DataTypes } = require('sequelize');
 //     active bool
 //   }
 
-module.exports = (sequelize) => {    
-    sequelize.define('Schedule', {
-      schedule_id : {
-        type: DataTypes.INTEGER,
-        autoIncrement: true,
-        primaryKey: true
-      },
-      day: {
-        type: DataTypes.DATE,
-        allowNull: false,
-      },
-      time: {
-        type: DataTypes.TIME,
-        allowNull: false,
-      },
-      room_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
-      movie_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
-      active: {
-        type: DataTypes.BOOLEAN,
-        allowNull: false,
-      },
-    });
-  };
+module.exports = (sequelize) => {
+  sequelize.define("Schedule", {
+    schedule_id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+    },
+    day: {
+      type: DataTypes.DATEONLY, // Se cambió DATE por DATEONLY para guardar solo la fecha
+      allowNull: false,
+      // validate: {           // verificar como funciona este validador.
+      //   isDate: true,
+      // }
+    },
+    time: {
+      type: DataTypes.TIME,
+      allowNull: false,
+    },
+    room_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    movie_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    active: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+    },
+  });
+};

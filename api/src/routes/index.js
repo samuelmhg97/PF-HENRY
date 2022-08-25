@@ -10,6 +10,26 @@ const router = Router();
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
 
+
+
+
+//Esta sería la información para el index.js modularizando las rutas//
+// const { Router } = require("express");
+// const MovieRouter = require("./movie.js");
+
+// const router = Router();
+
+// router.use("/movies", MovieRouter);
+
+// module.exports = router;
+
+
+
+
+
+
+
+
 router.get('/movies', async (req, res, next) => {
     try {
         const name = req.query.name;

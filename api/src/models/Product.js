@@ -1,4 +1,4 @@
-const { DataTypes } = require('sequelize');
+const { DataTypes } = require("sequelize");
 
 // Table cine.products{
 //     product_id int [pk, increment]
@@ -7,22 +7,28 @@ const { DataTypes } = require('sequelize');
 //     price float
 //   }
 
-module.exports = (sequelize) => {    
-    sequelize.define('Product', {
-      product_id : {
-        type: DataTypes.INTEGER,
-        autoIncrement: true,
-        primaryKey: true
+module.exports = (sequelize) => {
+  sequelize.define("Product", {
+    product_id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+    },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    stock: {
+      type: DataTypes.INTEGER,
+      validate: {
+        isInt: true,
       },
-      name: {
-        type: DataTypes.STRING,
-        allowNull: false,
+    },
+    price: {
+      type: DataTypes.FLOAT,
+      validate: {
+        isFloat: true,
       },
-      stock: {
-        type: DataTypes.INTEGER,        
-      },
-      price: {
-        type: DataTypes.FLOAT,        
-      }
-    });
-  };
+    },
+  });
+};

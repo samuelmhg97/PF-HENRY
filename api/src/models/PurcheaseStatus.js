@@ -1,20 +1,20 @@
-const { DataTypes } = require('sequelize');
+const { DataTypes } = require("sequelize");
 
-// Table purchease.status{
+// Table purchase.status{
 //     status_id int [pk, increment]
-//     decription varchar
+//     description varchar
 //   }
 
-module.exports = (sequelize) => {    
-    sequelize.define('Status', {
-      status_id : {
-        type: DataTypes.INTEGER,
-        autoIncrement: true,
-        primaryKey: true
-      },
-      decription: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-    });
-  };
+module.exports = (sequelize) => {
+  sequelize.define("Status", {
+    status_id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+    },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+  });
+};
