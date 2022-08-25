@@ -1,0 +1,8 @@
+@import './../../index.css';
+
+.billboard{
+    color: var(--violet-white);
+}
+.billboard .billboard--title{
+    color: var(--violet-white);
+}
