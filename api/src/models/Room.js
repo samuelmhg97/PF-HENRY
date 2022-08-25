@@ -4,7 +4,7 @@ const { DataTypes } = require('sequelize');
 //     room_id int [pk, increment]
 //     name varchar
 //     seats_amount int 
-//     room_seats schema  <--- SE RELACIONA X ID DE SALA con 
+//     room_seats schema  <--- TRAE UN OBJETO CON LOS ASIENTOS¿?
 //     display varchar  <--- ?? relaciono string
 //   }
   

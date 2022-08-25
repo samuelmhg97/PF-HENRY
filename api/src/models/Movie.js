@@ -33,6 +33,10 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
+    teaser: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     duration: {
       type: DataTypes.INTEGER,
       allowNull: true,
