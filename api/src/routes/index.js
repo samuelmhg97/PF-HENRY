@@ -17,8 +17,10 @@ router.use("/users", users);
 //Esta sería la información para el index.js modularizando las rutas//
 const MovieRouter = require("./movie.js");
 const RatingRouter = require("./rating.js");
+const ProductRouter = require("./product.js");
 router.use("/movies", MovieRouter);
 router.use("/ratings", RatingRouter);
+router.use("/products", ProductRouter);
 
 
 router.get("/movies", async (req, res, next) => {
