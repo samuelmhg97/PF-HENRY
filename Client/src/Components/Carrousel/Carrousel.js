@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import "./Carrousel.css";
 
 const carrouselImages = [
   {
@@ -55,19 +56,20 @@ const Carrousel = (_carrouselImages) => {
   }, [autoScroll, slideInterval, nextImg]);
 
   return (
-    <div className="carrousel">
+    <div className="carrousel--container">
       <button className="carrousel--left--arrow" onClick={prevImg}>
         {"<"}
-      </button>
-      <button className="carrousel--right--arrow" onClick={nextImg}>
-        {">"}
       </button>
 
       {carrouselImages.map((carrouselImages, index) => {
         return (
           <div
             ref={hoverImg}
-            className={index === current ? "slide active" : "slide"}
+            className={
+              index === current
+                ? "carrousel--image--active"
+                : "carrousel--image--inactive"
+            }
             key={index}
           >
             {index === current && (
@@ -75,13 +77,17 @@ const Carrousel = (_carrouselImages) => {
                 <img
                   src={carrouselImages.image}
                   alt={carrouselImages.alt}
-                  className="image"
+                  className="carrousel--image"
                 />
               </a>
             )}
           </div>
         );
       })}
+
+      <button className="carrousel--right--arrow" onClick={nextImg}>
+        {">"}
+      </button>
     </div>
   );
 };
