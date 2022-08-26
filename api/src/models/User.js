@@ -4,6 +4,7 @@ const { DataTypes } = require("sequelize");
 //   user_id int [pk, increment]
 //   username varchar
 //   email varchar
+//   role_id int
 // }
 
 module.exports = (sequelize) => {

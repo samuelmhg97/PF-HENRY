@@ -3,15 +3,12 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const cors = require("cors");
-const firebase = require("firebase-admin");
+const firebase = require("./firebase-config.js");
 const routes = require("./routes/index.js");
 const serviceAccount = require("./secret/serviceAccount.json");
 require("./db.js");
 
 const server = express();
-firebase.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-});
 
 server.name = "API";
 server.set("port", process.env.PORT || 3001);
