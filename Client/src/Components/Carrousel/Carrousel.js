@@ -42,17 +42,13 @@ const Carrousel = (_carrouselImages) => {
     setCurrent(current === length - 1 ? 0 : current + 1);
   };
 
-  function auto() {
-    slideInterval.current = setInterval(nextImg, intervalTime);
-  }
-
   useEffect(() => {
     setCurrent(0);
   }, []);
 
   useEffect(() => {
     if (autoScroll) {
-      auto();
+      slideInterval.current = setInterval(nextImg, intervalTime);
     }
 
     return () => clearInterval(slideInterval.current);
