@@ -4,6 +4,8 @@ const fs = require("fs");
 const path = require("path");
 const { DB_URI } = process.env;
 
+//!-------
+
 const sequelize = new Sequelize(DB_URI, {
   dialect: "postgresql",
   dialectOptions: {
