@@ -25,5 +25,9 @@ module.exports = (sequelize) => {
         isEmail: true, // valida que sea un correo correcto
       },
     },
+    role_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
   });
 };

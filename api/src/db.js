@@ -2,6 +2,7 @@ require("dotenv").config();
 const { Sequelize } = require("sequelize");
 const fs = require("fs");
 const path = require("path");
+const Role = require("./models/Role");
 const { DB_URI } = process.env;
 
 const sequelize = new Sequelize(DB_URI, {
@@ -49,6 +50,7 @@ const {
   Room,
   Schedule,
   BoughtSeats,
+  Role,
 } = sequelize.models;
 
 // Aca vendrian las relaciones
@@ -57,6 +59,7 @@ const {
 Rating.hasOne(Movie);
 Rating.hasOne(User);
 User.hasMany(Rating);
+User.hasOne(Role);
 Movie.hasMany(Rating);
 PurcheaseStatus.hasMany(Purchease);
 Purchease.hasOne(PurcheaseStatus);
