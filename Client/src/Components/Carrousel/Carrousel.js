@@ -1,7 +1,4 @@
-import React, { useState, useEffect, useTransition } from "react";
-
-const intervalTime = 1500;
-const autoScroll = true;
+import React, { useState, useEffect, useRef } from "react";
 
 const carrouselImages = [
   {
@@ -27,7 +24,11 @@ const carrouselImages = [
 ];
 
 const Carrousel = (_carrouselImages) => {
-  let slideInterval;
+  let intervalTime = 1500;
+  let autoScroll = true;
+  let hoverImg = useRef(null);
+
+  let slideInterval = useRef(null);
 
   const [current, setCurrent] = useState(0);
 
@@ -42,7 +43,7 @@ const Carrousel = (_carrouselImages) => {
   };
 
   function auto() {
-    slideInterval = setInterval(nextImg, intervalTime);
+    slideInterval.current = setInterval(nextImg, intervalTime);
   }
 
   useEffect(() => {
@@ -53,8 +54,9 @@ const Carrousel = (_carrouselImages) => {
     if (autoScroll) {
       auto();
     }
-    return () => clearInterval(slideInterval);
-  }, [current]);
+
+    return () => clearInterval(slideInterval.current);
+  }, [autoScroll, slideInterval, nextImg]);
 
   return (
     <div className="carrousel">
@@ -68,6 +70,7 @@ const Carrousel = (_carrouselImages) => {
       {carrouselImages.map((carrouselImages, index) => {
         return (
           <div
+            ref={hoverImg}
             className={index === current ? "slide active" : "slide"}
             key={index}
           >
