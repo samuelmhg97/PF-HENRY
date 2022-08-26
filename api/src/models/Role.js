@@ -1,11 +1,5 @@
 const { DataTypes } = require("sequelize");
 
-// Table cine.users {
-//   user_id int [pk, increment]
-//   username varchar
-//   email varchar
-// }
-
 module.exports = (sequelize) => {
   sequelize.define("Role", {
     role_id: {
