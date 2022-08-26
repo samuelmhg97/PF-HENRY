@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const { User, Role, Op } = require("sequelize");
+const { User, Role, Op } = require("../db.js");
 const axios = require("axios");
 require("dotenv").config();
 const { checkActiveUser, checkValidUser } = require("../middlewares/auth.js");

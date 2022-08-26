@@ -1,4 +1,4 @@
-const { Role } = require("sequelize");
+const { Role } = require("../db.js");
 
 const loadRoles = async () => {
   await Role.bulkCreate([
