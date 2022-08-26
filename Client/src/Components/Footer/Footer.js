@@ -1,19 +1,20 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import "./Footer.css";
 
 function Footer() {
   return (
     <div className="footer--container">
       <div className="footer">
-        <NavLink className="footer--link" to={""}>
-          Terms {"&"} Conditions
-        </NavLink>
-        <NavLink className="footer--link" to={""}>
-          About Us
-        </NavLink>
-        <NavLink className="footer--link" to={""}>
-          Contact Us
-        </NavLink>
+        <div className="footer--terms">
+          <NavLink to={""}>Terms {"&"} Conditions</NavLink>
+        </div>
+        <div className="footer--about">
+          <NavLink to={""}>About Us</NavLink>
+        </div>
+        <div className="footer--contact">
+          <NavLink to={""}>Contact Us</NavLink>
+        </div>
       </div>
     </div>
   );
