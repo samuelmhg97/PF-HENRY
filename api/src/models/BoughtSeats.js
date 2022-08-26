@@ -5,7 +5,7 @@ const { DataTypes } = require("sequelize");
 //     seat_numbers schema
 //     purchase_id int [ref: <> cine.purchases.purchase_id]
 //   }
-
+// estoy haciendo una prueb
 module.exports = (sequelize) => {
   sequelize.define("BoughtSeats", {
     selection_id: {
