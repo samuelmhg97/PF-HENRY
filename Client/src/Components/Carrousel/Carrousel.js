@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useTransition } from "react";
 
+const intervalTime = 1500;
+const autoScroll = true;
+
 const carrouselImages = [
   {
     image: "https://i.im.ge/2022/08/26/OmzHlr.1.png",
@@ -24,7 +27,10 @@ const carrouselImages = [
 ];
 
 const Carrousel = (_carrouselImages) => {
+  let slideInterval;
+
   const [current, setCurrent] = useState(0);
+
   const length = carrouselImages.length;
 
   const prevImg = () => {
@@ -35,9 +41,20 @@ const Carrousel = (_carrouselImages) => {
     setCurrent(current === length - 1 ? 0 : current + 1);
   };
 
-  // setInterval(() => {
-  //   nextImg();
-  // }, 1500);
+  function auto() {
+    slideInterval = setInterval(nextImg, intervalTime);
+  }
+
+  useEffect(() => {
+    setCurrent(0);
+  }, []);
+
+  useEffect(() => {
+    if (autoScroll) {
+      auto();
+    }
+    return () => clearInterval(slideInterval);
+  }, [current]);
 
   return (
     <div className="carrousel">
