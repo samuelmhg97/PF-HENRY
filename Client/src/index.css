@@ -3,6 +3,14 @@
     --violet-semiblack: rgb(76, 53, 117);
     --violet-semiwhite: rgb(91, 75, 138);
     --violet-white: rgb(120, 88, 166);
-    --white: rgb(245, 245, 245);
-    --black: rgb(22, 22, 22);
+    --white: rgb(228, 228, 228);
+    --black: rgb(12, 12, 12);
+    --red: rgb(180, 46, 46);
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    box-sizing: border-box;
 }
