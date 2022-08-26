@@ -1,5 +1,7 @@
 import React from "react";
 import "../SearchBar/SearchBar.css"
+
+
 function SearchBar() {
   const categories = [{
     image: "https://flyclipart.com/thumb2/mobile-menu-icon-png-40149.png",
@@ -16,7 +18,6 @@ function SearchBar() {
   return (
   <div className="SearchBar-container">
     <select className="SearchBar-menu">
-      <img src={categories[0].image} alt="" />
       <option className="">Categories</option>
       <option className="">Promotions</option>
       <option className="">Acerca De</option>
@@ -31,7 +32,7 @@ function SearchBar() {
     })}
     <div>
       <input className="" type="text" placeholder="Search..."></input>
-      <button className=""></button>
+      <button className="SearchBar-btn"></button>
     </div>
     {/* <img className="" alt="LogIn-logo"/> */}
     {LoginLogo?.map((LoginLogo, key)=>{
