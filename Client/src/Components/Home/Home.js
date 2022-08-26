@@ -3,9 +3,6 @@ import Carrousel from "../Carrousel/Carrousel";
 import Billboard from "./../Billboard/Billboard";
 
 function Home() {
-  React.useEffect(() => {
-    console.log("render home");
-  }, []);
 
   return (
     <div>

@@ -9,9 +9,11 @@ import store from './Redux/Store/index';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
-    <React.StrictMode>
+    {/* Comenté el strict mode para que me deje de renderizar 2 veces
+        Si quieren descomentenlo, igualmente en producción no pasaría por lo que no habría problema de recursos / optimización */}
+    {/* <React.StrictMode> */}
       <App />
-    </React.StrictMode>
+    {/* </React.StrictMode> */}
   </Provider>
 );
 
