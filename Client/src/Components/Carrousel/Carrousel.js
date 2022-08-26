@@ -25,7 +25,7 @@ const carrouselImages = [
 ];
 
 const Carrousel = (_carrouselImages) => {
-  let intervalTime = 1500;
+  let intervalTime = 4000;
   let autoScroll = true;
   let hoverImg = useRef(null);
 
