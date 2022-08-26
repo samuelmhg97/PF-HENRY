@@ -1,3 +1,31 @@
+.SearchBar-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 8rem;
+}
+.Searchlogo{
+    max-height: 6rem;
+    max-width: 6rem;
+    min-height: 3rem;
+    min-width: 3rem;
+
+    border-radius: 999999rem;
+}
+.Searchlogin{
+    max-height: 3rem;
+    max-width: 3rem;
+    min-height: 1rem;
+    min-width: 1rem;
+
+    border-radius: 999999rem;
+}
+.SearchBar-btn {
+    max-width: 2rem;
+    max-height: 4rem;
+}
 @media (max-width:25rem){
     .SearchBar-container{
         display: flex;
@@ -9,6 +37,10 @@
     .SearchBar-menu{
         height: 3rem;
         width: 3rem;
+    }
+    .SearchBar-btn {
+        max-width: 2rem;
+        max-height: 4rem;
     }
     .Searchlogo{
         max-height: 3rem;
