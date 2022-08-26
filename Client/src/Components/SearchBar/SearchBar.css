@@ -1,23 +1,30 @@
-.SearchBar-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
+@media (max-width:25rem){
+    .SearchBar-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
 
-.Searchlogo{
-    max-height: 3rem;
-    max-width: 3rem;
-    min-height: 1rem;
-    min-width: 1rem;
-
-    border-radius: 999999rem;
-}
-
-.Searchlogin{
-    max-height: 3rem;
-    max-width: 3rem;
-    min-height: 1rem;
-    min-width: 1rem;
-
-    border-radius: 999999rem;
+        height: 5rem;
+    }
+    .SearchBar-menu{
+        height: 3rem;
+        width: 3rem;
+    }
+    .Searchlogo{
+        max-height: 3rem;
+        max-width: 3rem;
+        min-height: 1rem;
+        min-width: 1rem;
+    
+        border-radius: 999999rem;
+    }
+    
+    .Searchlogin{
+        max-height: 3rem;
+        max-width: 3rem;
+        min-height: 1rem;
+        min-width: 1rem;
+    
+        border-radius: 999999rem;
+    }
 }
