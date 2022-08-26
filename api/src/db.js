@@ -2,6 +2,7 @@ require("dotenv").config();
 const { Sequelize } = require("sequelize");
 const fs = require("fs");
 const path = require("path");
+
 const { DB_URI } = process.env;
 
 const sequelize = new Sequelize(DB_URI, {
@@ -43,12 +44,13 @@ const {
   Display,
   Genre,
   Product,
-  Purchease,
-  PurcheaseStatus,
+  Purchase,
+  PurchaseStatus,
   Rating,
   Room,
   Schedule,
   BoughtSeats,
+  Role,
 } = sequelize.models;
 
 // Aca vendrian las relaciones
@@ -57,13 +59,14 @@ const {
 Rating.hasOne(Movie);
 Rating.hasOne(User);
 User.hasMany(Rating);
+User.hasOne(Role);
 Movie.hasMany(Rating);
-PurcheaseStatus.hasMany(Purchease);
-Purchease.hasOne(PurcheaseStatus);
-User.hasMany(Purchease);
-Purchease.hasOne(User);
-Purchease.hasMany(Detail);
-Detail.hasOne(Purchease);
+PurchaseStatus.hasMany(Purchase);
+Purchase.hasOne(PurchaseStatus);
+User.hasMany(Purchase);
+Purchase.hasOne(User);
+Purchase.hasMany(Detail);
+Detail.hasOne(Purchase);
 Detail.belongsToMany(Product, { through: "DetailProduct" });
 Product.belongsToMany(Detail, { through: "DetailProduct" });
 Movie.belongsToMany(Genre, { through: "MovieGenre" });
@@ -78,8 +81,8 @@ Schedule.hasOne(Display); // para mi ya la trae la room //
 Room.hasMany(Schedule);
 Movie.hasMany(Schedule);
 Display.hasMany(Schedule); // para mi ya estan relacionados por medio de la room//
-BoughtSeats.hasOne(Purchease); // Relación 1:1 con purchase porque una selección de butacas es una compra y una compra solo puede tener una selección de butacas
-Purchease.hasOne(BoughtSeats);
+BoughtSeats.hasOne(Purchase); // Relación 1:1 con purchase porque una selección de butacas es una compra y una compra solo puede tener una selección de butacas
+Purchase.hasOne(BoughtSeats);
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');

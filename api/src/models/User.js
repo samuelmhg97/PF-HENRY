@@ -4,6 +4,7 @@ const { DataTypes } = require("sequelize");
 //   user_id int [pk, increment]
 //   username varchar
 //   email varchar
+//   role_id int
 // }
 
 module.exports = (sequelize) => {
@@ -24,6 +25,10 @@ module.exports = (sequelize) => {
       validate: {
         isEmail: true, // valida que sea un correo correcto
       },
+    },
+    role_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
   });
 };
