@@ -13,12 +13,13 @@
 
 .carrousel--image--active{
   opacity: 1;
-	transition: opacity 1s ease-in-out;
+	transition: opacity 2s ease-in-out;
+  max-height: fit-content;
 }
 
 .carrousel--image--inactive{
   opacity: 0;
-	transition: opacity 1s ease-in-out;
+	transition: opacity 2s ease-in-out;
 }
 
 .carrousel--image{
