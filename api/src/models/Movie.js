@@ -14,6 +14,31 @@ const { DataTypes } = require("sequelize");
 //   display_id int [ref: <> cine.displays.description] <--- lo vemos en las relaciones
 // }
 
+const genre = [
+  "Action",
+  "Adventure",
+  "Animation",
+  "Biography",
+  "Comedy",
+  "Crime",
+  "Documentary",
+  "Drama",
+  "Family",
+  "Fantasy",
+  "History",
+  "Horror",
+  "Music",
+  "Mystery",
+  "Romance",
+  "Sci-Fi",
+  "Sport",
+  "Thriller",
+  "War",
+  "Western",
+];
+
+const display = ["2D", "3D", "4DX", "IMAX"];
+
 module.exports = (sequelize) => {
   sequelize.define("Movie", {
     movie_id: {
@@ -41,6 +66,12 @@ module.exports = (sequelize) => {
         // asi no hay que cargar el elemento en ninguna parte, solo se llama de otro sitio
         isUrl: true,
       },
+    },
+    genre: {
+      type: DataTypes.ARRAY(DataTypes.ENUM(genre)),
+    },
+    display: {
+      type: DataTypes.ARRAY(DataTypes.ENUM(display)),
     },
     duration: {
       type: DataTypes.INTEGER,
