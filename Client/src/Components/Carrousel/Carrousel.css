@@ -1,0 +1,25 @@
+@import './../../index.css';
+
+.carrousel--container{
+  display: flex;
+  justify-content: center;
+  min-width: 70vw;
+  background-color: var(--violet-semiblack);
+}
+
+.carrousel--left--arrow{}
+
+.carrousel--right--arrow{}
+
+.carrousel--image--active{
+  opacity: 1;
+	transition: opacity 1s ease-in-out;
+}
+
+.carrousel--image--inactive{
+  opacity: 0;
+	transition: opacity 1s ease-in-out;
+}
+
+.carrousel--image{
+}
