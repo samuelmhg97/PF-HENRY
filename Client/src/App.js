@@ -3,6 +3,7 @@ import React from "react";
 import MovieDetails from "./Components/MovieDetails/MovieDetails";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+
 function App() {
 
   //   React.useEffect(() => {
@@ -18,6 +19,7 @@ function App() {
           <Route exact path='/movie/:id' element={<MovieDetails />}/>
         </Routes>
       </Router>
+
     </div>
   );
 }
