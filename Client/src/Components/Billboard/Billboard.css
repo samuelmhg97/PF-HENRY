@@ -1,18 +1,37 @@
 @import './../../index.css';
+@keyframes fadeInAnimation {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
 
 .billboard{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     font-family: 'Roboto';
+    margin: 2em 0;
 }
 
 .billboard .billboard--container{
     background-color: var(--black);
     margin: 1em;
+    height: 20em;
     position: relative;
     display: flex;
     border-radius: 5px;
+    opacity: 1;
+    transition: opacity .75s ease-in;
 }
+/* MODIFICADOR DE LA CARD DE LA PELICULA, SI NO SE VE EN EL VIEWPORT NO SE RENDERIZA */
+.billboard .billboard--container__notrender{
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+
 .billboard .billboard--container .billboard--poster{
     width: 50%;
     border-radius: 5px 0 0 5px;
@@ -77,4 +96,9 @@
     box-shadow: 0px 0px 10px 0px var(--black);
     -webkit-box-shadow: 0px 0px 10px 0px var(--black);
     -moz-box-shadow: 0px 0px 10px 0px var(--black);
+}
+
+/* SOLO PARA TESTEAR LOS VISIBILITY HIDDEN DE LAS CARDS */
+.billboard--footer{
+    height: 30em;
 }
