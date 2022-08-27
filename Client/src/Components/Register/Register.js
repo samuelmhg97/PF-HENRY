@@ -1,5 +1,6 @@
 import { useState } from "react"
-import { useAuth } from "../Context/auth"
+import { useAuth } from "../Context/authContext"
+import {useNavigate} from "react-router-dom"
 
 export default function Register() {
 
@@ -9,9 +10,14 @@ export default function Register() {
         email: "",
         password: ""
     })
+
+    const [error, setError] = useState()
+
+    const navigate = useNavigate()
     const {signUp} = useAuth()
 
     const handleChange = (e) => {
+        console.log(e.target.value)
         setUser({
             ...user,
             [e.target.name]: e.target.value
@@ -19,9 +25,14 @@ export default function Register() {
     }
 
     const handleSubmit = (e) => {
-        e.preventDefault()
-        signUp(user.email, user.password)
-        //console.log(user)
+        e.preventDefault() 
+        try{
+            signUp(user.email, user.password)
+        } catch(error){
+            console.log(error.message)
+        }
+
+        // console.log(user)
     }
     return (
         <div>
@@ -30,7 +41,7 @@ export default function Register() {
                 <div>
                 <label name="Name">Nombre</label>
                 <input 
-                name="Name" 
+                name="name" 
                 type="text"
                 onChange={(e) => handleChange(e)}
                 />
@@ -66,6 +77,7 @@ export default function Register() {
                 </div>
                 <button type="submit">Registrar ahora</button>
             </form>
+            {error && <h6>{error}</h6>}
         </div>
 
     )

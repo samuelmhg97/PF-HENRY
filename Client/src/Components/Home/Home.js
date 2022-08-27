@@ -7,7 +7,7 @@ import SocialMedia from "../SocialMedia/SocialMedia";
 import Billboard from "./../Billboard/Billboard";
 import "./Home.css";
 
-import { useAuth } from "../Context/auth";
+// import { useAuth } from "../Context/auth";
 
 function Home() {
 
