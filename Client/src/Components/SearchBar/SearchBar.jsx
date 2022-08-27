@@ -31,8 +31,8 @@ function SearchBar() {
       )
     })}
     <div>
-      <input className="" type="text" placeholder="Search..."></input>
-      <button className="SearchBar-btn"></button>
+      <input className="SearchBar-input" type="text" placeholder="Search..."></input>
+      <button className="SearchBar-btn">Icons</button>
     </div>
     {/* <img className="" alt="LogIn-logo"/> */}
     {LoginLogo?.map((LoginLogo, key)=>{

@@ -1,62 +1,84 @@
+@import url(../../index.css);
 .SearchBar-container{
+    background-color: var(--violet-semiwhite);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 
-    height: 8rem;
+    /* height: 10vh;
+    width: 100vh; */
+}
+.SearchBar-menu{
+    max-height: 10vh;
+    max-width: 10vh;
 }
 .Searchlogo{
-    max-height: 6rem;
-    max-width: 6rem;
-    min-height: 3rem;
-    min-width: 3rem;
+    max-height: 20vh; 
+    max-width: 20vh;
+    /* min-height: 3rem;
+    min-width: 3rem; */
 
     border-radius: 999999rem;
 }
-.Searchlogin{
-    max-height: 3rem;
-    max-width: 3rem;
-    min-height: 1rem;
-    min-width: 1rem;
+.SearchBar-input {
+    max-width: 20vh;
+    max-height: 20vh;
 
-    border-radius: 999999rem;
 }
 .SearchBar-btn {
-    max-width: 2rem;
-    max-height: 4rem;
+    max-width: 10vh;
+    max-height: 10vh;
+
+    border: none;
+    border-radius: 999999rem;
 }
-@media (max-width:25rem){
+
+
+.Searchlogin{
+    max-height: 10vh;
+    max-width: 10vh;
+    /* min-height: 1rem;
+    min-width: 1rem; */
+
+    border-radius: 999999rem;
+}
+
+@media (min-width: 25rem){
     .SearchBar-container{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
 
-        height: 5rem;
     }
     .SearchBar-menu{
-        height: 3rem;
-        width: 3rem;
-    }
-    .SearchBar-btn {
-        max-width: 2rem;
-        max-height: 4rem;
-    }
+        max-height: 10vh;
+        max-width: 10vh;
+    }    
     .Searchlogo{
-        max-height: 3rem;
-        max-width: 3rem;
-        min-height: 1rem;
-        min-width: 1rem;
+        max-height: 10vh; 
+        max-width: 10vh;
+        /* min-height: 1rem;
+        min-width: 1rem; */
     
         border-radius: 999999rem;
     }
+    .SearchBar-input {
+        max-width: 20vh;
+        max-height: 20vh;
+    
+    }
+    .SearchBar-btn {
+        max-width: 10vh;
+        max-height: 10vh;
+    }
+
     
     .Searchlogin{
-        max-height: 3rem;
-        max-width: 3rem;
-        min-height: 1rem;
-        min-width: 1rem;
+        max-width: 10vh;
+        max-height: 10vh;
     
+        border: none;
         border-radius: 999999rem;
     }
 }
