@@ -1,0 +1,29 @@
+@import './../../index.css';
+
+.footer--container{
+  min-width: 70vw;
+}
+
+.footer{
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer--contact{
+  margin: 1rem;
+  font-family: fantasy;
+}
+
+
+.footer--terms{
+  margin: 1rem;
+  font-family: fantasy;
+}
+
+.footer--about{
+  margin: 1rem;
+  font-family: fantasy;
+}
