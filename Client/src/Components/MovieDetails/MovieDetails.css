@@ -1,1 +1,87 @@
 @import './../../index.css';
+
+.movie--detail--container{
+    margin: 2em 1em;
+    background-color: var(--black);
+    font-family: 'Roboto';
+    border-radius: 15px 15px 0 0;
+    padding: 0.5em;
+    color: var(--white);
+    text-align: center;
+}
+.movie--detail--teaser{
+    width: 100%;
+    height: 15em;
+}
+.movie--detail--title{
+    background-color: var(--violet-semiblack);
+    border-radius: 15px 15px 0 0;
+    font-size: 2em;
+    color: var(--black);
+    padding: .5em 0;
+    font-weight: bold;
+}
+
+/* DESDE ACA TODA LA INFORMACIÓN */
+.movie--detail--info{
+    position: relative;
+    padding: 1em 0;
+}
+
+.movie--detail--sinopsistitle{
+    margin: .5em 0;
+}
+.movie--detail--description{
+    color: var(--violet-white);
+    margin: 1em 0;
+}
+
+.movie--detail--rating{
+    border: 2px solid var(--violet-white);
+    padding: .5em;
+    color: var(--white);
+    display: inline-block;
+    /* margin: 1em auto; */
+    border-radius: 0 0 10px 10px;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* DISEÑO BOTONES */
+
+.movie--detail--container--buttons{
+    display: flex;
+    justify-content: center;
+    gap: 0 .5em;
+}
+.movie--detail--container--button{
+    text-decoration: none;
+    background-color: var(--violet-semiblack);
+    padding: .5em;
+    width: 50%;
+    font-weight: bold;
+    color: var(--white);
+}.movie--detail--container--button:hover{
+    background-color: var(--violet-black);
+    cursor: pointer;
+    transition: .3s;
+}
+
+/* DISEÑO DE MÁS INFORMACIÓN */
+
+.movie--detail--container--info{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em 0;
+}
+.container--info--submenu{
+    width: 50%;
+    vertical-align: top;
+}
+.info--submenu--list--item{
+    color: var(--violet-white);
+    list-style-type: none;
+    margin: .5em 0;
+}

@@ -1,18 +1,21 @@
-import React from "react";
+import {React} from "react";
 import Carrousel from "../Carrousel/Carrousel";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
+
 import SocialMedia from "../SocialMedia/SocialMedia";
 import Billboard from "./../Billboard/Billboard";
 import "./Home.css";
 
-function Home() {
-  React.useEffect(() => {
-    console.log("render home");
-  }, []);
+// import { useAuth } from "../Context/auth";
 
+function Home() {
+
+  //const authContext = useAuth()
+  //console.log(authContext)
   return (
-    <div className="home--container">
+
+    <div>
       <Header />
       <Carrousel />
       <Billboard />
