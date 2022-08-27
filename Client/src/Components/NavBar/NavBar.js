@@ -2,7 +2,7 @@ import React from "react";
 import "./Navbar.css"
 
 
-function SearchBar() {
+function NavBar() {
   const categories = [{
     image: "https://flyclipart.com/thumb2/mobile-menu-icon-png-40149.png",
     alt: "Categorie"
@@ -44,4 +44,4 @@ function SearchBar() {
   );
 }
 
-export default SearchBar;
+export default NavBar;
