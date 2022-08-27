@@ -2,6 +2,8 @@ import Home from "./Components/Home/Home";
 import React from "react";
 import MovieDetails from "./Components/MovieDetails/MovieDetails";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import CreateMovie from "./Components/Admin/CreateMovie/CreateMovie";
+import AdminMenu from "./Components/Admin/AdminMenu/AdminMenu";
 
 function App() {
   //   React.useEffect(() => {
