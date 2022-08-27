@@ -1,7 +1,11 @@
 import Home from "./Components/Home/Home";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import React from "react";
 import MovieDetails from "./Components/MovieDetails/MovieDetails";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./Components/Login/Login";
+import Register from "./Components/Register/Register";
+import NavBar from "./Components/NavBar/NavBar";
+import { AuthProvider } from "./Components/Context/authContext";
 
 function App() {
   //   React.useEffect(() => {
@@ -10,7 +14,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Main App</h1>
+      <AuthProvider>
+      <a href="www.google.com">Main App</a>
+      <NavBar/>
       <Router>
         <Routes>
           <Route exact path="/" element={<Home />} />
@@ -21,8 +27,11 @@ function App() {
             path="/adminmenu/createmovie"
             element={<CreateMovie />}
           />
+          <Route exact path="login" element={<Login/>} />
+          <Route exact path="register" element={<Register/>}/>
         </Routes>
       </Router>
+      </AuthProvider>
     </div>
   );
 }
