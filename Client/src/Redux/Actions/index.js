@@ -1,5 +1,5 @@
-const axios = require('axios');
-const apiKey = '4ef335cb';
+const axios = require("axios");
+const apiKey = "4ef335cb";
 
 // export function getMovies(){
 //     return function(dispatch){
@@ -10,11 +10,19 @@ const apiKey = '4ef335cb';
 //     }
 // }
 
-export function getMovieDetail(id){
-    return function(dispatch){
-        return axios.get(`https://www.omdbapi.com/?apikey=${apiKey}&i=${id}`)
-        .then(r => r.data)
-        .then(d => dispatch({type: 'GET_MOVIE_DETAIL', payload: d}))
-        .catch(e => console.log(e));
-    }
+export function getMovieDetail(id) {
+  return function (dispatch) {
+    return axios
+      .get(`https://www.omdbapi.com/?apikey=${apiKey}&i=${id}`)
+      .then((r) => r.data)
+      .then((d) => dispatch({ type: "GET_MOVIE_DETAIL", payload: d }))
+      .catch((e) => console.log(e));
+  };
+}
+
+export function postMovie(payload) {
+  return async function (dispatch) {
+    const json = await axios.post(`HTTP://LOCALHOST:3001/`, payload);
+    return json;
+  };
 }

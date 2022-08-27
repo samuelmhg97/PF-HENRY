@@ -8,7 +8,6 @@ import NavBar from "./Components/NavBar/NavBar";
 import { AuthProvider } from "./Components/Context/authContext";
 
 function App() {
-
   //   React.useEffect(() => {
   //   console.log('render home')
   // },[])
@@ -20,8 +19,14 @@ function App() {
       <NavBar/>
       <Router>
         <Routes>
-          <Route exact path='/' element={<Home />}/>
-          <Route exact path='/movie/:id' element={<MovieDetails />}/>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/movie/:id" element={<MovieDetails />} />
+          <Route exact path="/adminmenu" element={<AdminMenu />} />
+          <Route
+            exact
+            path="/adminmenu/createmovie"
+            element={<CreateMovie />}
+          />
           <Route exact path="login" element={<Login/>} />
           <Route exact path="register" element={<Register/>}/>
         </Routes>

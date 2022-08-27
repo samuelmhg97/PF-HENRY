@@ -1,0 +1,31 @@
+.admin--menu--container{
+  width: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-style: solid;
+  border-color: black;
+  border-radius: 3%;
+  }
+  .admin--menu--header{
+  
+  }
+  .admin--menu--movie--options{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .admin--menu--user--options{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .admin--button{
+    margin-top:0.5rem;
+    border-radius: 15px;
+    width: 10rem;
+    height: 3rem;
+  }
+  
