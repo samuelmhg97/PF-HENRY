@@ -5,7 +5,7 @@ import MovieDetails from "./Components/MovieDetails/MovieDetails";
 import Login from "./Components/Login/Login";
 import Register from "./Components/Register/Register";
 import NavBar from "./Components/NavBar/NavBar";
-import { AuthProvider } from "./Components/Context/auth";
+import { AuthProvider } from "./Components/Context/authContext";
 
 function App() {
 
