@@ -1,9 +1,9 @@
 import "./App.css";
-import firebase from "firebase/compat/app";
+import firebase from "firebase/compat/auth";
 import "firebase/compat/auth";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import app from "./config/firebase-config.js";
+import app from "../Firebase/FirebaseAuth"
 //import ListOfTodo from "./components/ListOfTodo";
  
 function App() {
