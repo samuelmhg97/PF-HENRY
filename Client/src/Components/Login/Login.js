@@ -6,13 +6,38 @@ export default function Login() {
         email: "",
         password: ""
     })
-
+    const handleChange = (e) => {
+        setUser({
+            ...user,
+            [e.target.name]: e.target.value
+        })
+    }
     return (
         <div>
             <h1>Login</h1>
             <form>
-                <input id="Login-email" type="email" name="Email" placeholder="Correo Electronico" />
-                <input id="Login-password" type="password"  name="Password" placeholder="Contraseña" />
+                <div>
+                <label name="Email">Correo Electronico</label>
+                <input
+                id="Login-email" 
+                name="email" 
+                type="email" 
+                placeholder="Correo Electronico"
+                onChange= {(e) => handleChange(e)}
+                />
+                </div>
+
+                <div>
+                <label name="Password" >Contraseña</label>
+                <input
+                id="Login-password" 
+                name="password" 
+                type="password" 
+                placeholder="Contraseña"
+                onChange= {(e) => handleChange(e)}
+                />
+                
+                </div>
             </form>
         </div>
     )
