@@ -1,18 +1,22 @@
 const initialState = {
   movies: [],
-  movieDetail: {}
-}
+  movieDetail: {},
+};
 
-export default function rootReducer(state=initialState, action){
-  switch(action.type){
-    case 'GET_MOVIE_DETAIL': 
+export default function rootReducer(state = initialState, action) {
+  switch (action.type) {
+    case "GET_MOVIE_DETAIL":
       return {
         ...state,
-        movieDetail: action.payload
-      }
-    default: 
-    return {
-      ...state
-    }
+        movieDetail: action.payload,
+      };
+    default:
+      return {
+        ...state,
+      };
+    case "POST_MOVIE":
+      return {
+        ...state,
+      };
   }
 }

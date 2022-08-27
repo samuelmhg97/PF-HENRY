@@ -1,10 +1,9 @@
 import Home from "./Components/Home/Home";
 import React from "react";
 import MovieDetails from "./Components/MovieDetails/MovieDetails";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
-
   //   React.useEffect(() => {
   //   console.log('render home')
   // },[])
@@ -14,8 +13,14 @@ function App() {
       <h1>Main App</h1>
       <Router>
         <Routes>
-          <Route exact path='/' element={<Home />}/>
-          <Route exact path='/movie/:id' element={<MovieDetails />}/>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/movie/:id" element={<MovieDetails />} />
+          <Route exact path="/adminmenu" element={<AdminMenu />} />
+          <Route
+            exact
+            path="/adminmenu/createmovie"
+            element={<CreateMovie />}
+          />
         </Routes>
       </Router>
     </div>
