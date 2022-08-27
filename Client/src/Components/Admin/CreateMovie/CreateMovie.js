@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import "./CreateMovie.css";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { postMovie } from "../../Redux/Actions";
+import { postMovie } from "../../../Redux/Actions";
 import { v5 as UUID } from "uuid";
+import "./CreateMovie.css";
 
 var value = "";
 const requirements = [
