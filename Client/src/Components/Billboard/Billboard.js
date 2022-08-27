@@ -26,9 +26,9 @@ export default function Billboard(){
     useEffect(() => {
         // Cada vez que se ve o se deja de ver una card entra en esta funcion y "entries" pasa a ser esa card
         const observer = new IntersectionObserver((entries) => {
-            console.log(entries)
+            // console.log(entries)
             const entry = entries.map(e => e.isIntersecting);
-            console.log(entry)
+            // console.log(entry)
             setIsVisible(entry);
         });
         // Cada vez que se modifique el estado isInvisible por un array de 1 length (1 entry), se lo modifica por un array con el largo de la cantidad de cards y un booleano dependiendo de si se ve o no
@@ -40,28 +40,28 @@ export default function Billboard(){
 
     const movies = [
         {
-            id: '1',
+            movie_id: '1',
             title: 'Pokémon: Detective Pikachu',
             poster: 'https://m.media-amazon.com/images/M/MV5BMDkxNzRmNDYtMDY0OS00N2JhLTkzZWUtMWE3MzZkNDk1MmJiXkEyXkFqcGdeQXVyNTA3MTU2MjE@._V1_SX300.jpg',
             description: 'The residents of a lonely gulch in inland California bear witness to an uncanny and chilling discovery.',
             premiere: false
         },
         {
-            id: '2',
+            movie_id: '2',
             title: 'Halloween',
             poster: 'https://m.media-amazon.com/images/I/61NDDpRDDJL._AC_SY741_.jpg',
             description: 'The residents of a lonely gulch in inland California bear witness to an uncanny and chilling discovery.',
-            premiere: false
+            premiere: false //comingsoon
         },
         {
-            id: '3',
+            movie_id: '3',
             title: 'Nope',
             poster: 'https://hollywoodlife.com/wp-content/uploads/2022/06/Nope-Everything-To-Know-embed-1.jpg',
             description: 'The residents of a lonely gulch in inland California bear witness to an uncanny and chilling discovery.',
             premiere: true
         },
         {
-            id: '4',
+            movie_id: '4',
             title: 'DIGIMON',
             poster: 'https://hollywoodlife.com/wp-content/uploads/2022/06/Nope-Everything-To-Know-embed-1.jpg',
             description: 'The residents of a lonely gulch in inland California bear witness to an uncanny and chilling discovery.',
@@ -75,14 +75,14 @@ export default function Billboard(){
             {/* RENDER MOVIES */}
             {movies.length > 0 ? movies.map((m, index) =>
                 // Checkeamos si el estado isVisible es true o false dependiendo del observer
-                <div key={m.id} className={isVisible[index] ? 'billboard--container' : 'billboard--container billboard--container__notrender'} ref={element => movieCards.current[index] = element}>
+                <div key={m.movie_id} className={isVisible[index] ? 'billboard--container' : 'billboard--container billboard--container__notrender'} ref={element => movieCards.current[index] = element}>
                     <img className='billboard--poster' src={m.poster} alt={m.title}/>
                     <div className='billboard--info'>
                         <h3 className='billboard--title'>{m.title.toUpperCase()}</h3>
                         <p className='billboard--description'>{m.description}</p>
                         {m.premiere && <p className='billboard--comingsoon'>PREMIERE</p>}
                         <div className='billboard--container--button'>
-                            <button className='billboard--button'><Link className='billboard--link' to={`/movie/${m.id}`}>View more</Link></button>
+                            <button className='billboard--button'><Link className='billboard--link' to={`/movie/${m.movie_id}`}>View more</Link></button>
                             <button className='billboard--button'>Add to cart</button>
                         </div>
                     </div>
@@ -90,7 +90,6 @@ export default function Billboard(){
             )
             : <p className='billboard--notfound'>No movies available.</p>
             }
-            <p className='billboard--footer'>FOOTER</p>
         </div>
     )
 }

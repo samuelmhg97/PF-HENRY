@@ -98,8 +98,3 @@
     -webkit-box-shadow: 0px 0px 10px 0px var(--black);
     -moz-box-shadow: 0px 0px 10px 0px var(--black);
 }
-
-/* SOLO PARA TESTEAR LOS VISIBILITY HIDDEN DE LAS CARDS */
-.billboard--footer{
-    height: 30em;
-}
