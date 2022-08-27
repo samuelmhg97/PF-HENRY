@@ -1,8 +1,8 @@
 import React from "react";
-import "../SearchBar/SearchBar.css"
+import "./Navbar.css"
 
 
-function SearchBar() {
+function NavBar() {
   const categories = [{
     image: "https://flyclipart.com/thumb2/mobile-menu-icon-png-40149.png",
     alt: "Categorie"
@@ -31,8 +31,8 @@ function SearchBar() {
       )
     })}
     <div>
-      <input className="" type="text" placeholder="Search..."></input>
-      <button className="SearchBar-btn"></button>
+      <input className="SearchBar-input" type="text" placeholder="Search..."></input>
+      <button className="SearchBar-btn">Icons</button>
     </div>
     {/* <img className="" alt="LogIn-logo"/> */}
     {LoginLogo?.map((LoginLogo, key)=>{
@@ -44,4 +44,4 @@ function SearchBar() {
   );
 }
 
-export default SearchBar;
+export default NavBar;
