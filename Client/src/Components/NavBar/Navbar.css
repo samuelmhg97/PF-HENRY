@@ -1,5 +1,4 @@
 @import url(../../index.css);
-
 @media (min-width: 300px){
     .NavBar-container{
         background-color: var(--violet-semiwhite);

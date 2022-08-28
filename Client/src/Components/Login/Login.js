@@ -2,6 +2,8 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useAuth } from "../Context/authContext"
 
+import "../Login/Login.css"
+
 export default function Login() {
 
     const [user, setUser] = useState({
@@ -44,10 +46,10 @@ export default function Login() {
         // console.log(user)
     }
     return (
-        <div>
-            <h1>Login</h1>
-            <form onSubmit={(e) => handleSubmit(e)}>
-                <div>
+        <div className="Login-container">
+            <h1 className="Login-title">Login</h1>
+            <form className="Login-form" onSubmit={(e) => handleSubmit(e)}>
+                <div className="Login-containerEmail">
                 <label name="Email">Correo Electronico</label>
                 <input
                 id="Login-email" 
@@ -58,7 +60,7 @@ export default function Login() {
                 />
                 </div>
 
-                <div>
+                <div className="Login-containerPassword">
                 <label name="Password" >Contraseña</label>
                 <input
                 id="Login-password" 
@@ -68,7 +70,7 @@ export default function Login() {
                 onChange= {(e) => handleChange(e)}
                 />                
                 </div>
-                <button type="submit">Ingresar</button>
+                <button className="Login-btn" type="submit">Ingresar</button>
             </form>
             {error && <p>{error}</p>}
         </div>
