@@ -19,6 +19,7 @@ import CreateMovie from "./Components/Admin/Movies/CreateMovie/CreateMovie.js";
 import DeleteMovie from "./Components/Admin/Movies/DeleteMovie/DeleteMovie.js";
 import EditMovie from "./Components/Admin/Movies/EditMovie/EditMovie.js";
 
+
 function App() {
   //   React.useEffect(() => {
   //   console.log('render home')

@@ -1,4 +1,5 @@
 import React from "react";
+import { SearchBar } from "./SearchBar/Searchbar";
 import "./Navbar.css"
 
 
@@ -16,8 +17,8 @@ function NavBar() {
     alt: "login"
   }]
   return (
-  <div className="SearchBar-container">
-    <select className="SearchBar-menu">
+  <div className="NavBar-container">
+    <select className="NavBar-menu">
       <option className="">Categories</option>
       <option className="">Promotions</option>
       <option className="">Acerca De</option>
@@ -25,15 +26,12 @@ function NavBar() {
       <option className="">Log In</option>
       <option className="">Register</option>
     </select>
+    <SearchBar/>
     {/* {logo?.map((logo, key)=>{
       return(
         <img className="Searchlogo" src={logo.image} alt={logo.alt} key={key} />
       )
     })} */}
-    <div>
-      <input className="SearchBar-input" type="text" placeholder="Search..."></input>
-      <button className="SearchBar-btn">Icons</button>
-    </div>
     {/* <img className="" alt="LogIn-logo"/> */}
     {/* {LoginLogo?.map((LoginLogo, key)=>{
       return(
