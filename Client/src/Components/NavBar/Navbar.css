@@ -1,86 +1,17 @@
 @import url(../../index.css);
-.SearchBar-container{
-    background-color: var(--violet-semiwhite);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
-    /* height: 10vh;
-    width: 100vh; */
-}
-.SearchBar-menu{
-    max-height: 10vh;
-    max-width: 10vh;
-}
-.Searchlogo{
-    max-height: 20vh; 
-    max-width: 20vh;
-    /* min-height: 3rem;
-    min-width: 3rem; */
-
-    border-radius: 999999rem;
-}
-.SearchBar-input {
-    max-width: 20vh;
-    max-height: 20vh;
-
-}
-.SearchBar-btn {
-    max-width: 10vh;
-    max-height: 10vh;
-
-    border: none;
-    border-radius: 999999rem;
-}
-
-
-.Searchlogin{
-    max-height: 10vh;
-    max-width: 10vh;
-    /* min-height: 1rem;
-    min-width: 1rem; */
-
-    border-radius: 999999rem;
-}
 
 @media (min-width: 300px){
-    .SearchBar-container{
+    .NavBar-container{
+        background-color: var(--violet-semiwhite);
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
+    }
+    .NavBar-menu {
+        min-height: 2rem;
+        min-width: 20%;
 
-        height: 5vh;
-
-    }
-    .SearchBar-menu{
-        max-height: 10vh;
-        max-width: 10vh;
-    }    
-    .Searchlogo{
-        max-height: 10vh; 
-        max-width: 10vh;
-        /* min-height: 1rem;
-        min-width: 1rem; */
-    
-        border-radius: 999999rem;
-    }
-    .SearchBar-input {
-        max-width: 20vh;
-        max-height: 20vh;
-    
-    }
-    .SearchBar-btn {
-        max-width: 10vh;
-        max-height: 10vh;
-    }
-
-    
-    .Searchlogin{
-        max-width: 10vh;
-        max-height: 10vh;
-    
-        border: none;
-        border-radius: 999999rem;
+        margin-left: 0.5rem;
     }
 }

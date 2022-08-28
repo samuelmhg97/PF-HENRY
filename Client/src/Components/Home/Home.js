@@ -7,12 +7,12 @@ import SocialMedia from "../SocialMedia/SocialMedia";
 import Billboard from "./../Billboard/Billboard";
 import "./Home.css";
 
-// import { useAuth } from "../Context/auth";
+import { useAuth } from "../Context/authContext";
 
 function Home() {
 
-  //const authContext = useAuth()
-  //console.log(authContext)
+  const {user} = useAuth()
+  console.log(user)
   return (
 
     <div>
