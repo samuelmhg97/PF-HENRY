@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { postMovie } from "../../../../Redux/Actions";
-import { v5 as UUID } from "uuid";
 import "./CreateMovie.css";
+
+// import { v5 as UUID } from "uuid";
 
 var value = "";
 const requirements = [
@@ -25,7 +26,7 @@ const requirements = [
 function CreateMovie(_requirements) {
   const dispatch = useDispatch();
 
-  const [errors, setErrors] = useState({});
+  // const [errors, setErrors] = useState({});
 
   const [input, setInput] = useState({
     title: "",
@@ -59,36 +60,38 @@ function CreateMovie(_requirements) {
 
   return (
     <div className="create--movie--container">
-      <h1>CreateMovie</h1>
-      <br />
-      <form className="create--movie--form" onSubmit={(e) => handleSubmit(e)}>
-        {requirements.map((req, index) => {
-          value = req.prop;
-          return (
-            <div>
-              <h2>{req.prop[0].toUpperCase() + req.prop.substring(1)}</h2>
-              <input
-                key={value}
-                className="create--movie--form--input"
-                type="text"
-                value={input[value]}
-                name={req.prop}
-                required
-                placeholder={`insert ${req.prop}`}
-                onChange={(e) => handleChange(e)}
-              />
-            </div>
-          );
-        })}
+      <div className="create--movie">
+        <h1>CreateMovie</h1>
         <br />
-        <button className="create--movie--submit--button" type="submit">
-          Create Movie
-        </button>
+        <form className="create--movie--form" onSubmit={(e) => handleSubmit(e)}>
+          {requirements.map((req, index) => {
+            value = req.prop;
+            return (
+              <div>
+                <h2>{req.prop[0].toUpperCase() + req.prop.substring(1)}</h2>
+                <input
+                  key={value}
+                  className="create--movie--form--input"
+                  type="text"
+                  value={input[value]}
+                  name={req.prop}
+                  required
+                  placeholder={`insert ${req.prop}`}
+                  onChange={(e) => handleChange(e)}
+                />
+              </div>
+            );
+          })}
+          <br />
+          <button className="create--movie--submit--button" type="submit">
+            Create Movie
+          </button>
 
-        <Link to="/adminmenu" className="create--movie--go--back--button">
-          <div>Go Back</div>
-        </Link>
-      </form>
+          <Link to="/adminmenu" className="go--back--button">
+            <div>Go Back</div>
+          </Link>
+        </form>
+      </div>
     </div>
   );
 }
