@@ -23,7 +23,12 @@
   }
   
   .admin--button{
+    display:flex;
+    justify-content: center;
+    align-items: center;
     margin-top:0.5rem;
+    border-style: solid;
+    border-color: black;
     border-radius: 15px;
     width: 10rem;
     height: 3rem;
