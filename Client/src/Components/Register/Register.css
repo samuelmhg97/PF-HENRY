@@ -17,8 +17,8 @@
         font-size: 2rem;
     }
     .Register-form {
-        height: 20rem;
-        width: 80%;
+        height: 20%;
+        width: 30%;
 
         display: flex;
         flex-direction: column;
