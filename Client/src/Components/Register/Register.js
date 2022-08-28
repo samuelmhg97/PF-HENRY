@@ -31,7 +31,7 @@ export default function Register() {
         setError("")
         try{
             await signUp(user.email, user.password);
-            navigate("/");
+            navigate("/adminmenu");
         } catch(error){
             console.log(error.message)
             if(error.code === "auth/invalid-email") {
@@ -50,7 +50,7 @@ export default function Register() {
     }
     return (
         <div className="Register-container">
-            <div className="Register-title">Register</div>
+            <h1 className="Register-title">Register</h1>
             <form className="Register-form" onSubmit={(e) => handleSubmit(e)}>
                 <div className="Register-name">
                 <label name="Name">Nombre</label>
