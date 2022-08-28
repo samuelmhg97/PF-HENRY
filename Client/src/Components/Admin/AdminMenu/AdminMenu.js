@@ -13,19 +13,34 @@ function AdminMenu() {
         <h2>Movies</h2>
         <br />
         <Link to="/adminmenu/createmovie">
-          <button className="admin--button">Create Movie</button>
+          <div className="admin--button">Create Movie</div>
         </Link>
-        <button className="admin--button">Edit Movie</button>
-        <button className="admin--button">Delete Movie</button>
+        <Link to="/adminmenu/editmovie">
+          <div className="admin--button">Edit Movie</div>
+        </Link>
+        <Link to="/adminmenu/deletemovie">
+          <div className="admin--button">Delete Movie</div>
+        </Link>
       </div>
       <br />
       <div className="admin--menu--user--options">
         <h2>Users</h2>
         <br />
-        <button className="admin--button">Reset User Password</button>
-        <button className="admin--button">Upgrade User To Admin</button>
-        <button className="admin--button">Ban User</button>
-        <button className="admin--button">Delete User</button>
+        <Link to="/adminmenu/createuser">
+          <div className="admin--button">Create User</div>
+        </Link>
+        <Link to="/adminmenu/resetuserpassword">
+          <div className="admin--button">Reset User Password</div>
+        </Link>
+        <Link to="/adminmenu/upgradedemoteusers">
+          <div className="admin--button">Upgrade/Demote Users</div>
+        </Link>
+        <Link to="/adminmenu/banuser">
+          <div className="admin--button">Ban User</div>
+        </Link>
+        <Link to="/adminmenu/deleteuser">
+          <div className="admin--button">Delete User</div>
+        </Link>
       </div>
       <br />
     </div>

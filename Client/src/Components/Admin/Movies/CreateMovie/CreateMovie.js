@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { postMovie } from "../../../Redux/Actions";
+import { postMovie } from "../../../../Redux/Actions";
 import { v5 as UUID } from "uuid";
 import "./CreateMovie.css";
 
@@ -86,7 +86,7 @@ function CreateMovie(_requirements) {
         </button>
 
         <Link to="/adminmenu" className="create--movie--go--back--button">
-          <button>Go Back</button>
+          <div>Go Back</div>
         </Link>
       </form>
     </div>

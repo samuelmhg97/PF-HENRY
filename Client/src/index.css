@@ -1,3 +1,7 @@
+a {
+    text-decoration: none;
+}
+
 :root{
     --violet-black: rgb(55, 27, 88);
     --violet-semiblack: rgb(76, 53, 117);
