@@ -13,10 +13,8 @@ export function AuthProvider({children}) {
 //const user = {
 //login: true
 //}
-    const signUp = (email, password) =>{
-        console.log(email, password)
-        createUserWithEmailAndPassword(auth, email, password)
-    }
+    const signUp = (email, password) => createUserWithEmailAndPassword(auth, email, password)
+
 
     return (
         <authContext.Provider value={{signUp}} >

@@ -44,11 +44,13 @@
     border-radius: 999999rem;
 }
 
-@media (min-width: 25rem){
+@media (min-width: 300px){
     .SearchBar-container{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+
+        height: 5vh;
 
     }
     .SearchBar-menu{
