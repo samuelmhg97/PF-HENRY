@@ -8,6 +8,15 @@
       opacity: 1;
     }
 }
+/* .billboard--big--link{
+    color: var(--violet-white);
+    border-radius: 15px;
+}
+.billboard--big--link:hover{
+    color: var(--white);
+    background-color: var(--violet-black);
+    transition: .3s;
+} */
 
 .billboard{
     display: grid;
@@ -17,8 +26,6 @@
 }
 
 .billboard .billboard--container{
-    
-    background-color: var(--black);
     margin: 1em;
     height: 20em;
     position: relative;
@@ -39,8 +46,8 @@
 }
 .billboard .billboard--container .billboard--info .billboard--title{
     text-align: center;
-    color: var(--violet-white);
-    font-size: 1.25em;    
+    font-size: 1.25em;
+    font-family: 'Oswald';
 }
 .billboard--description{
     line-height: 1.25em;
@@ -97,7 +104,17 @@
 
 /* TABLET Y DESKTOP */
 @media screen and (min-width: 835px) {
+    .billboard--big--link{
+        color: var(--violet-white);
+        border-radius: 15px;
+    }
+    .billboard--big--link:hover{
+        color: var(--white);
+        background-color: var(--violet-black);
+        transition: .3s;
+    }
     .billboard{
+        grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
         margin: 2em auto;
         gap: 2em;
         width: 80vw;
@@ -105,23 +122,25 @@
     .billboard .billboard--container{
         flex-direction: column;
         height: 100%;
-        margin: 0 auto;
-        max-width: 300px;
+        margin: 0;
+        width: 100%;
     }
     .billboard .billboard--container .billboard--info, .billboard .billboard--container .billboard--poster{
         width: auto;
     }
+    .billboard--description{
+        display: none;
+    }
     .billboard--info{
-        height: 15em;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
     }
     .billboard--container--button{
-        position: inherit;
+        /* position: inherit;
         gap: 1em;
         justify-content: center;
-        margin: 1em 0 0 0;
+        margin: 1em 0 0 0; */
+        display: none;
     }
     .billboard--button {
         width: 50%;
