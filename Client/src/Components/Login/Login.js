@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useAuth } from "../Context/authContext"
 
 import "../Login/Login.css"
@@ -20,7 +20,9 @@ export default function Login() {
 
     const {logIn, loginGoogle } = useAuth()
 
-
+    const handleHome =() => {
+        navigate("/")
+    }
     const handleChange = (e) => {
         console.log(e.target.value)
         setUser({
@@ -53,6 +55,10 @@ export default function Login() {
 
     }
     return (
+        <div>
+            <div className="Loginhome-btnContainer">
+                <button className="Loginhome-btn" onClick={handleHome}>Home</button>
+            </div>
         <div className="Login-container">
             <h1 className="Login-title">Login</h1>
             <form className="Login-form" onSubmit={(e) => handleSubmit(e)}>
@@ -79,13 +85,24 @@ export default function Login() {
                 />                
                 </div>
 
+                <div className="Login-btns">
                 <button className="Login-btn" type="submit">Ingresar</button>
+                <button className="Logingoogle-btn" onClick={(e) => handleGoogleSignIn(e)}>Ingresa con Google</button>
+                </div>
+
+                <div className="User-options">
+                    <Link to="/register">
+                        <h4 className="RegisterNow">Registrate Ahora</h4>
+                    </Link>
+                    <Link to="/">
+                        <h4 className="Forgot-password">Reestablecer contraseña</h4>
+                    </Link>
+                </div>
             </form>
-            <button onClick={(e) => handleGoogleSignIn(e)}>Log In with Google</button>
             {error && <p>{error}</p>}  
             {/* podemos estilizarlo creandolo como componente aparte */}
             
-
+            </div>
         </div>
     )
 }

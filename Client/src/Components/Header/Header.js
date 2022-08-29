@@ -1,4 +1,7 @@
 import React from "react";
+
+import {Link} from "react-router-dom"
+
 import { Link } from "react-router-dom";
 
 import logos from "../../Images/Images";
@@ -25,7 +28,9 @@ function Header() {
         </div>
 
         <div className="header--user--ico">
+        <Link to ="/login">
           <img src={userIcon.image} alt={userIcon.alt} />
+        </Link>
         </div>
       </div>
     </div>

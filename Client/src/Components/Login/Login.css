@@ -69,8 +69,14 @@
         max-height: 100%;
         max-width: 100%;
     }
+    .Login-btns {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
-
+        gap: 1em;
+    }
     .Login-btn{ 
 
         max-height: 2rem;
@@ -92,6 +98,70 @@
         background-color: var(--red);
 
         max-height: 3rem;
+    }
+    .Logingoogle-btn {
+        max-height: 2rem;
+
+        padding: 1vh;
+
+        border: none;
+        border-radius: 99rem;
+
+        background-color: var(--red);
+
+        color: var(--white);
+
+        transition: 0.9s;
+    }
+    .Logingoogle-btn:hover {
+        cursor: pointer;
+        background-color: var(--black);
+
+        max-height: 3rem;
+    }
+    .Loginhome-btnContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+
+
+        min-height: 20%;
+    }
+    .Loginhome-btn {
+        border: none;
+        border-radius: 0.3rem;
+
+        height: 2rem;
+        width: 3rem;
+
+        margin: 1em;
+        padding: 0.5em;
+
+        background-color: var(--red);
+
+        color:  var(--white);
+
+        transition: 0.9s;
+    }
+
+    .Loginhome-btn:hover {
+        cursor: pointer;
+
+        background-color: var(--violet-semiwhite);
+
+        height: 3rem;
+        width: 4rem;
+    }
+
+    .RegisterNow:hover {
+        cursor: pointer;
+    }
+
+    .User-options {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }
 
