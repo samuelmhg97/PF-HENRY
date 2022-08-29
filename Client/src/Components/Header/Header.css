@@ -1,20 +1,51 @@
 @import url(../../index.css);
 
 .header--container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
   min-width: 100%;
   background-color: var(--violet-black);
 }
 
+.header{  
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .header--menu--ico{
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: flex-start;
+  
+  transition: all 0.2s ease-in-out;
 }
 
 .header--logo--menu{
-  justify-self: center;
+  transition: all 0.2s ease-in-out;
 }
 
+
 .header--user--ico{
+  
+  transition: all 0.2s ease-in-out;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Hovers! */
+
+.header--user--ico:hover{
+  background-color: var(--violet-white);
+  outline: auto;
+  transform: scale(1.1,1.1);
+}
+
+.header--logo--menu:hover{
+  transform: scale(1.2,1.2);
+}
+
+.header--menu--ico:hover{
+  background-color: var(--violet-white);
+  outline:auto;
+  transform: scale(1.1,1.1);
 }
