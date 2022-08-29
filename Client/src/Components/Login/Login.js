@@ -4,6 +4,7 @@ import { useAuth } from "../Context/authContext"
 
 import "../Login/Login.css"
 
+
 export default function Login() {
 
     const [user, setUser] = useState({
@@ -16,7 +17,9 @@ export default function Login() {
     const [error, setError] = useState()
 
     const navigate = useNavigate()
+
     const {logIn, loginGoogle } = useAuth()
+
 
     const handleChange = (e) => {
         console.log(e.target.value)
@@ -42,6 +45,7 @@ export default function Login() {
             }
             // setError(error.message)
         }
+
     }
     const handleGoogleSignIn = async () => {
         await loginGoogle()
@@ -53,6 +57,7 @@ export default function Login() {
             <h1 className="Login-title">Login</h1>
             <form className="Login-form" onSubmit={(e) => handleSubmit(e)}>
                 <div className="Login-containerEmail">
+
                 <label name="Email">Correo Electronico</label>
                 <input
                 id="Login-email" 
@@ -73,12 +78,14 @@ export default function Login() {
                 onChange= {(e) => handleChange(e)}
                 />                
                 </div>
+
                 <button className="Login-btn" type="submit">Ingresar</button>
             </form>
             <button onClick={(e) => handleGoogleSignIn(e)}>Log In with Google</button>
             {error && <p>{error}</p>}  
             {/* podemos estilizarlo creandolo como componente aparte */}
             
+
         </div>
     )
 }

@@ -1,38 +1,24 @@
 import React from "react";
 import "./SocialMedia.css";
+import iconSource from "./SocialMediaSource.js";
 
-function SocialMedia() {
+const icons = iconSource;
+
+function SocialMedia(_icons) {
   return (
     <div className="socialMedia--container">
-      <div className="socialMedia--twitter">
-        <a href="https://www.twitter.com" target={"_blank"}>
-          <img
-            className="socialMedia--image"
-            src="https://pnggrid.com/wp-content/uploads/2021/07/Twitter-Logo-Square-150x150.png"
-            alt="Twitter"
-          />
-        </a>
-      </div>
-
-      <div className="socialMedia--facebook">
-        <a href="https://www.facebook.com" target={"_blank"}>
-          <img
-            className="socialMedia--image"
-            alt="Facebook"
-            src="https://pnggrid.com/wp-content/uploads/2021/07/Facebook-Logo-Square-150x150.png"
-          ></img>
-        </a>
-      </div>
-
-      <div className="socialMedia--instagram">
-        <a href="https://www.instagram.com" target={"_blank"}>
-          <img
-            className="socialMedia--image"
-            alt="Instagram"
-            src="https://pnggrid.com/wp-content/uploads/2021/06/Instagram-Logo-Transparent-1-150x150.png"
-          ></img>
-        </a>
-      </div>
+      {icons.map((icon) => {
+        return (
+          <a href={icon.url} target="blank" key={(icon.id += 10)}>
+            <img
+              key={icon.id}
+              className="socialMedia--logo"
+              src={icon.image}
+              alt={icon.alt}
+            ></img>
+          </a>
+        );
+      })}
     </div>
   );
 }

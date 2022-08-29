@@ -18,6 +18,8 @@ import DeleteUser from "./Components/Admin/Users/DeleteUser/DeleteUser.js";
 import CreateMovie from "./Components/Admin/Movies/CreateMovie/CreateMovie.js";
 import DeleteMovie from "./Components/Admin/Movies/DeleteMovie/DeleteMovie.js";
 import EditMovie from "./Components/Admin/Movies/EditMovie/EditMovie.js";
+import Footer from "./Components/Footer/Footer";
+import SocialMedia from "./Components/SocialMedia/SocialMedia";
 
 
 function App() {
@@ -28,11 +30,10 @@ function App() {
   return (
     <div className="App">
       <AuthProvider>
-        <a href="www.google.com">Main App</a>
-        <NavBar />
         <Router>
           <Routes>
             <Route exact path="/" element={<Home />} />
+
             <Route exact path="/movie/:id" element={<MovieDetails />} />
             <Route exact path="/adminmenu" element={<AdminMenu />} />
             <Route exact path="login" element={<Login />} />

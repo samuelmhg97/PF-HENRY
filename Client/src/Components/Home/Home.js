@@ -1,13 +1,16 @@
-import {React} from "react";
-import Carrousel from "../Carrousel/Carrousel";
-import Footer from "../Footer/Footer";
-import Header from "../Header/Header";
+import { React } from "react";
 
-import SocialMedia from "../SocialMedia/SocialMedia";
+import Header from "../Header/Header";
+import NavBar from "../NavBar/NavBar";
+import Carrousel from "../Carrousel/Carrousel";
 import Billboard from "./../Billboard/Billboard";
+import SocialMedia from "../SocialMedia/SocialMedia";
+import Footer from "../Footer/Footer";
+
 import "./Home.css";
 
 import { useAuth } from "../Context/authContext";
+
 import {useNavigate} from "react-router-dom"
 
 function Home() {
@@ -22,14 +25,21 @@ function Home() {
     await logOut();
     navigate("/login")
   }
-  return (
 
-    <div>
+  return (
+    <div className="home--container">
+      <br />
       <Header />
+      <br />
+      <NavBar />
+      <br />
       <Carrousel />
+      <br />
       <Billboard />
-      <button onClick={handleLogOut}>Log Out</button>
+<button onClick={handleLogOut}>Log Out</button>
+
       <SocialMedia />
+      <br />
       <Footer />
     </div>
   );

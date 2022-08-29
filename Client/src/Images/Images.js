@@ -1,7 +1,11 @@
-import React from "react";
+import logoMain from "../Images/logomain.png";
 
-function Images() {
-  return <div>Images</div>;
-}
+const logos = [
+  {
+    image: logoMain,
+    alt: "logo",
+    id: 0,
+  },
+];
 
-export default Images;
+export default logos;

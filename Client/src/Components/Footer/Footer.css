@@ -1,29 +1,41 @@
 @import './../../index.css';
 
-.footer--container{
-  min-width: 70vw;
+a {
+  color: var(--white);
 }
 
-.footer{
+.footer--container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 
+  min-width: 100%;
+  background-color: var(--violet-black);
+}
+
+.footer--links{
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin: 1rem;
+  
 }
 
-.footer--contact{
-  margin: 1rem;
-  font-family: fantasy;
+.footer--links:hover{
+  transform: scale(1.1,1.1);
+  font-weight: bold;
+  transition-property: all;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
 }
 
-
-.footer--terms{
-  margin: 1rem;
-  font-family: fantasy;
-}
-
-.footer--about{
-  margin: 1rem;
-  font-family: fantasy;
+.copyright{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  font-weight: 100;
 }

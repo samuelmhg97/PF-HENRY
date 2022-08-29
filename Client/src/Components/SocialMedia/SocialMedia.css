@@ -1,25 +1,28 @@
 @import './../../index.css';
 
 .socialMedia--container{
-  min-width: 70vw;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: var(--violet-semiblack);
+
+  min-width: 100%;
+  max-width: fit-content;
+  
+  background-color: var(--violet-black);
 }
-.socialMedia--twitter{
+
+.socialMedia--logo--container{
   margin: 1rem;
-
-}
-.socialMedia--facebook{
-  margin: 1rem;
-
-}
-.socialMedia--instagram{
-  margin: 1rem
 }
 
-.socialMedia--image{
-  width: 2rem;  
+.socialMedia--logo{
+  width: 4rem;  
+  margin: 0.5rem;
+  
+  transition: all 0.2s ease-in-out;
+}
+
+.socialMedia--logo:hover{
+  transform: scale(1.1,1.1);
 }

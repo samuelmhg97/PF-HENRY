@@ -1,4 +1,5 @@
 import React from "react";
+
 import { SearchBar } from "./SearchBar/Searchbar";
 import "./Navbar.css"
 import { useAuth } from "../Context/authContext";
@@ -47,6 +48,7 @@ function NavBar() {
       )
     })} */}
   </div>
+
   );
 }
 
