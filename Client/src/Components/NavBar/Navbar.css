@@ -1,6 +1,6 @@
 @import url(../../index.css);
 
-        display: flex;
+    .navBar{    display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
@@ -11,4 +11,4 @@
 
         margin-left: 0.5rem;
     }
-}
+
