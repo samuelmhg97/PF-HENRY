@@ -1,128 +1,56 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import React from "react";
+import "./AdminMenu.css";
 import { Link } from "react-router-dom";
-import { postMovie } from "../../../../Redux/Actions";
-import Footer from "../../../Footer/Footer";
-import Header from "../../../Header/Header";
-import NavBar from "../../../NavBar/NavBar";
-import SocialMedia from "../../../SocialMedia/SocialMedia";
-import "./CreateMovie.css";
+import Header from "../../Header/Header";
+import NavBar from "../../NavBar/NavBar";
+import SocialMedia from "../../SocialMedia/SocialMedia";
+import Footer from "../../Footer/Footer";
 
-// import { v5 as UUID } from "uuid";
-
-var value = "";
-const requirements = [
-  { prop: "title" },
-  { prop: "genre" },
-  { prop: "duration" },
-  { prop: "description" },
-  { prop: "teaser" },
-  { prop: "display" },
-  { prop: "classification" },
-  { prop: "cast" },
-  { prop: "director" },
-  { prop: "language" },
-  { prop: "comingSoon" },
-  { prop: "poster" },
-];
-
-function CreateMovie(_requirements) {
-  const dispatch = useDispatch();
-
-  // const [errors, setErrors] = useState({});
-
-  const [input, setInput] = useState({
-    title: "",
-    genre: [],
-    duration: "",
-    description: "",
-    teaser: "",
-    display: [],
-    classification: "",
-    cast: [],
-    director: "",
-    language: "",
-    poster: "",
-    comingSoon: "",
-  });
-
-  function handleChange(e) {
-    e.preventDefault();
-    setInput({
-      ...input,
-      [e.target.name]: e.target.value,
-    });
-  }
-
-  function handleSubmit(e) {
-    //Esto funciona, increiblemente :D
-    input.genre = [input.genre];
-    input.cast = [input.cast];
-    input.display = [input.display];
-
-    console.log(input);
-
-    e.preventDefault();
-    dispatch(postMovie(input));
-    alert("Movie Created!");
-    setInput({
-      title: "",
-      genre: "",
-      duration: "",
-      description: "",
-      teaser: "",
-      display: "",
-      classification: "",
-      cast: "",
-      director: "",
-      writter: "",
-      language: "",
-      poster: "",
-    });
-    e.target.reset();
-  }
-
+function AdminMenu() {
   return (
     <div>
       <Header />
       <NavBar />
-      <div className="create--movie--container">
-        <div className="create--movie">
-          <h1 className="create--movie--text">CreateMovie</h1>
+      <div className="admin--menu--container">
+        <div className="admin--menu">
+          <div className="admin--menu--header">
+            <h1>Admin Menu</h1>
+          </div>
           <br />
-          <form
-            className="create--movie--form"
-            onSubmit={(e) => handleSubmit(e)}
-          >
-            {requirements.map((req) => {
-              value = req.prop;
-              return (
-                <div>
-                  <h2 className="create--movie--form--titles">
-                    {req.prop[0].toUpperCase() + req.prop.substring(1) + " : "}
-                  </h2>
-                  <input
-                    key={value}
-                    className="create--movie--form--input"
-                    type="text"
-                    value={input.value}
-                    name={req.prop}
-                    // required
-                    placeholder={`insert ${req.prop}`}
-                    onChange={(e) => handleChange(e)}
-                  />
-                </div>
-              );
-            })}
+          <div className="admin--menu--movie--options">
+            <h2>Movies</h2>
             <br />
-            <button className="create--movie--button" type="submit">
-              Create Movie
-            </button>
-
-            <Link to="/adminmenu" className="create--movie--button">
-              <div>Go Back</div>
+            <Link to="/adminmenu/createmovie">
+              <button className="admin--button">Create Movie</button>
             </Link>
-          </form>
+            <Link to="/adminmenu/editmovie">
+              <button className="admin--button">Edit Movie</button>
+            </Link>
+            <Link to="/adminmenu/deletemovie">
+              <button className="admin--button">Delete Movie</button>
+            </Link>
+          </div>
+          <br />
+          <div className="admin--menu--user--options">
+            <h2>Users</h2>
+            <br />
+            <Link to="/adminmenu/createuser">
+              <button className="admin--button">Create User</button>
+            </Link>
+            <Link to="/adminmenu/resetuserpassword">
+              <button className="admin--button">Reset User Password</button>
+            </Link>
+            <Link to="/adminmenu/upgradedemoteusers">
+              <button className="admin--button">Upgrade/Demote Users</button>
+            </Link>
+            <Link to="/adminmenu/banuser">
+              <button className="admin--button">Ban User</button>
+            </Link>
+            <Link to="/adminmenu/deleteuser">
+              <button className="admin--button">Delete User</button>
+            </Link>
+          </div>
+          <br />
         </div>
       </div>
       <SocialMedia />
@@ -131,4 +59,4 @@ function CreateMovie(_requirements) {
   );
 }
 
-export default CreateMovie;
+export default AdminMenu;
