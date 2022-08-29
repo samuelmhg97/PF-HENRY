@@ -18,6 +18,10 @@ export default function Register() {
     const navigate = useNavigate()
     const {signUp} = useAuth()
 
+
+    const handleHome = () => {
+        navigate("/")
+    }
     const handleChange = (e) => {
         console.log(e.target.value)
         setUser({
@@ -25,7 +29,6 @@ export default function Register() {
             [e.target.name]: e.target.value
         })
     }
-
     const handleSubmit = async(e) => {
         e.preventDefault() 
         setError("")
@@ -49,6 +52,10 @@ export default function Register() {
         // console.log(user)
     }
     return (
+        <div>
+            <div className="Registerhome-btncontainer">
+                <button className="Registerhome-btn" onClick={handleHome}>Home</button>
+            </div>
         <div className="Register-container">
             <h1 className="Register-title">Register</h1>
             <form className="Register-form" onSubmit={(e) => handleSubmit(e)}>
@@ -97,6 +104,6 @@ export default function Register() {
             </form>
             {error && <p>{error}</p>}
         </div>
-
+        </div>
     )
 }
