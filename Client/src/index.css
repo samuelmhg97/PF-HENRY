@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&family=Roboto&family=Roboto+Mono&display=swap');
+
 a {
     text-decoration: none;
 }
@@ -18,7 +20,4 @@ a {
 body{
     box-sizing: border-box;
     background-color: var(--black)
-}
-
-.root{
 }

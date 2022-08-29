@@ -15,6 +15,9 @@ function Footer() {
         <div className="footer--links">
           <NavLink to={""}>Contact Us</NavLink>
         </div>
+        <div className="footer--links">
+          <NavLink to={"/adminmenu"}>TEMPORAL ADMIN MENU ACCESS</NavLink>
+        </div>
       </div>
 
       <div className="copyright">

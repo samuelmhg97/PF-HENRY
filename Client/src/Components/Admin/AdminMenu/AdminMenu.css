@@ -5,6 +5,8 @@
     display: flex;
     justify-content: center;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: var(--white);
+    user-select: none;
   }
   
   .admin--menu{
@@ -13,9 +15,6 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    border-style: solid;
-    border-color: black;
-    border-radius: 3%;
   }
 
   .admin--menu--header{

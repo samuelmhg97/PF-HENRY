@@ -12,6 +12,7 @@ a {
 
   min-width: 100%;
   background-color: var(--violet-black);
+  user-select: none;
 }
 
 .footer--links{
