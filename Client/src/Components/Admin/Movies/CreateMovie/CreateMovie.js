@@ -52,10 +52,24 @@ function CreateMovie(_requirements) {
   }
 
   function handleSubmit(e) {
-    console.log(e);
     e.preventDefault();
     dispatch(postMovie(input));
     alert("Movie Created!");
+    setInput({
+      title: "",
+      genre: "",
+      duration: "",
+      description: "",
+      teaser: "",
+      display: "",
+      classification: "",
+      cast: "",
+      director: "",
+      writter: "",
+      language: "",
+      poster: "",
+    });
+    e.target.reset();
   }
 
   return (
@@ -64,7 +78,7 @@ function CreateMovie(_requirements) {
         <h1>CreateMovie</h1>
         <br />
         <form className="create--movie--form" onSubmit={(e) => handleSubmit(e)}>
-          {requirements.map((req, index) => {
+          {requirements.map((req) => {
             value = req.prop;
             return (
               <div>

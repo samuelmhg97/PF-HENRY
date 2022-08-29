@@ -1,13 +1,12 @@
 @import url(../../index.css);
 .SearchBar-container{
-    background-color: var(--violet-semiwhite);
+    background-color: var(--violet-black);
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-
-    /* height: 10vh;
-    width: 100vh; */
+    min-width: 100%;
+    top: 0;
+    z-index: 1;
 }
 .SearchBar-menu{
     max-height: 10vh;

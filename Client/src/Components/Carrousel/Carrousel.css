@@ -2,25 +2,40 @@
 
 .carrousel--container{
   display: flex;
+  flex-shrink: 1;
   justify-content: center;
-  min-width: 70vw;
-  background-color: var(--violet-semiblack);
+  min-width: 100%;
+  max-width:max-content;
+  background-color: var(--violet-black);
+  
 }
 
-.carrousel--left--arrow{}
+.carrousel--left--arrow{
+  width: 1rem;
+  left: 0;
+  opacity: 1;
+  color: var(--violet-black);
+}
 
-.carrousel--right--arrow{}
+.carrousel--right--arrow{
+  width: 1rem;
+  left: 0;
+  opacity: 1;
+  color: var(--violet-black)
+}
 
 .carrousel--image--active{
   opacity: 1;
-	transition: opacity 2s ease-in-out;
+	transition: all 1s ease-out;
   max-height: fit-content;
 }
 
 .carrousel--image--inactive{
   opacity: 0;
-	transition: opacity 2s ease-in-out;
+	transition: all 1s ease-out;
 }
 
 .carrousel--image{
+  height: 200px;
+  width: 650px;
 }

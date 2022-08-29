@@ -8,6 +8,14 @@
     }
 }
 
+.billboard--main--container{
+    background-color: var(--violet-black);
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .billboard{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -27,11 +35,12 @@
     transition: opacity .75s ease-in;
 }
 /* MODIFICADOR DE LA CARD DE LA PELICULA, SI NO SE VE EN EL VIEWPORT NO SE RENDERIZA */
-.billboard .billboard--container__notrender{
+
+/* .billboard .billboard--container__notrender{
     opacity: 0;
     transition: opacity 1s ease-in;
 }
-
+ */
 
 .billboard .billboard--container .billboard--poster{
     width: 50%;
@@ -39,7 +48,7 @@
 }
 .billboard .billboard--container .billboard--info{
     width: 50%;
-    margin: 1em;
+    margin: 0.5em;
 }
 .billboard .billboard--container .billboard--info .billboard--title{
     text-align: center;
