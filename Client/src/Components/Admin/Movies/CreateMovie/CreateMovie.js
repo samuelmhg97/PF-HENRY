@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { postMovie } from "../../../../Redux/Actions";
+import Footer from "../../../Footer/Footer";
+import Header from "../../../Header/Header";
+import NavBar from "../../../NavBar/NavBar";
+import SocialMedia from "../../../SocialMedia/SocialMedia";
 import "./CreateMovie.css";
 
 // import { v5 as UUID } from "uuid";
@@ -17,9 +21,8 @@ const requirements = [
   { prop: "classification" },
   { prop: "cast" },
   { prop: "director" },
-  { prop: "writter" },
   { prop: "language" },
-  { prop: "release_year" },
+  { prop: "comingSoon" },
   { prop: "poster" },
 ];
 
@@ -30,17 +33,17 @@ function CreateMovie(_requirements) {
 
   const [input, setInput] = useState({
     title: "",
-    genre: "",
+    genre: [],
     duration: "",
     description: "",
     teaser: "",
-    display: "",
+    display: [],
     classification: "",
-    cast: "",
+    cast: [],
     director: "",
-    writter: "",
     language: "",
     poster: "",
+    comingSoon: "",
   });
 
   function handleChange(e) {
@@ -52,6 +55,13 @@ function CreateMovie(_requirements) {
   }
 
   function handleSubmit(e) {
+    //Esto funciona, increiblemente :D
+    input.genre = [input.genre];
+    input.cast = [input.cast];
+    input.display = [input.display];
+
+    console.log(input);
+
     e.preventDefault();
     dispatch(postMovie(input));
     alert("Movie Created!");
@@ -73,39 +83,50 @@ function CreateMovie(_requirements) {
   }
 
   return (
-    <div className="create--movie--container">
-      <div className="create--movie">
-        <h1>CreateMovie</h1>
-        <br />
-        <form className="create--movie--form" onSubmit={(e) => handleSubmit(e)}>
-          {requirements.map((req) => {
-            value = req.prop;
-            return (
-              <div>
-                <h2>{req.prop[0].toUpperCase() + req.prop.substring(1)}</h2>
-                <input
-                  key={value}
-                  className="create--movie--form--input"
-                  type="text"
-                  value={input[value]}
-                  name={req.prop}
-                  required
-                  placeholder={`insert ${req.prop}`}
-                  onChange={(e) => handleChange(e)}
-                />
-              </div>
-            );
-          })}
+    <div>
+      <Header />
+      <NavBar />
+      <div className="create--movie--container">
+        <div className="create--movie">
+          <h1 className="create--movie--text">CreateMovie</h1>
           <br />
-          <button className="create--movie--submit--button" type="submit">
-            Create Movie
-          </button>
+          <form
+            className="create--movie--form"
+            onSubmit={(e) => handleSubmit(e)}
+          >
+            {requirements.map((req) => {
+              value = req.prop;
+              return (
+                <div>
+                  <h2 className="create--movie--form--titles">
+                    {req.prop[0].toUpperCase() + req.prop.substring(1) + " : "}
+                  </h2>
+                  <input
+                    key={value}
+                    className="create--movie--form--input"
+                    type="text"
+                    value={input.value}
+                    name={req.prop}
+                    // required
+                    placeholder={`insert ${req.prop}`}
+                    onChange={(e) => handleChange(e)}
+                  />
+                </div>
+              );
+            })}
+            <br />
+            <button className="create--movie--button" type="submit">
+              Create Movie
+            </button>
 
-          <Link to="/adminmenu" className="go--back--button">
-            <div>Go Back</div>
-          </Link>
-        </form>
+            <Link to="/adminmenu" className="create--movie--button">
+              <div>Go Back</div>
+            </Link>
+          </form>
+        </div>
       </div>
+      <SocialMedia />
+      <Footer />
     </div>
   );
 }
