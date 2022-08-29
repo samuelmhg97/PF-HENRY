@@ -23,6 +23,7 @@
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     font-family: 'Roboto';
     margin: 2em 0;
+    user-select: none;
 }
 
 .billboard .billboard--container{

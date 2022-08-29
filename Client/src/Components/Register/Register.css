@@ -7,6 +7,8 @@
         justify-content: center;
         align-items: center;
 
+        user-select: none;
+
         background-color: var(--black);
         opacity: 0.999;
 
