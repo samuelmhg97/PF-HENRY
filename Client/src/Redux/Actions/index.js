@@ -1,5 +1,6 @@
 const axios = require('axios');
 
+
 export function getMovies(){
     return function(dispatch){
         return axios.get('http://api-pf-cine.herokuapp.com/movies')
@@ -22,4 +23,11 @@ export function delMovieDetail(){
     return {
         type: 'DEL_MOVIE_DETAIL'
     }
+}
+
+export function postMovie(payload) {
+  return async function (dispatch) {
+    const json = await axios.post(`HTTP://LOCALHOST:3001/`, payload);
+    return json;
+  };
 }

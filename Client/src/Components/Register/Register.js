@@ -1,5 +1,8 @@
 import { useState } from "react"
-import { useAuth } from "../Context/auth"
+import { useAuth } from "../Context/authContext"
+import {useNavigate} from "react-router-dom"
+
+import "../Register/Register.css"
 
 export default function Register() {
 
@@ -9,34 +12,56 @@ export default function Register() {
         email: "",
         password: ""
     })
+
+    const [error, setError] = useState()
+
+    const navigate = useNavigate()
     const {signUp} = useAuth()
 
     const handleChange = (e) => {
+        console.log(e.target.value)
         setUser({
             ...user,
             [e.target.name]: e.target.value
         })
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        signUp(user.email, user.password)
-        //console.log(user)
+    const handleSubmit = async(e) => {
+        e.preventDefault() 
+        setError("")
+        try{
+            await signUp(user.email, user.password);
+            navigate("/adminmenu");
+        } catch(error){
+            console.log(error.message)
+            if(error.code === "auth/invalid-email") {
+                setError("Correo inválido")
+            }
+            if(error.code === "auth/weak-password") {
+                setError("Contraseña inválida")
+            }
+            if(error.code === "auth/email-already-in-use") {
+                setError("Usuario ya registrado")
+            }
+            // setError(error.message)
+        }
+
+        // console.log(user)
     }
     return (
-        <div>
-            <div>Register</div>
-            <form onSubmit={(e) => handleSubmit(e)}>
-                <div>
+        <div className="Register-container">
+            <h1 className="Register-title">Register</h1>
+            <form className="Register-form" onSubmit={(e) => handleSubmit(e)}>
+                <div className="Register-name">
                 <label name="Name">Nombre</label>
                 <input 
-                name="Name" 
+                name="name" 
                 type="text"
                 onChange={(e) => handleChange(e)}
                 />
                 </div>
 
-                <div>
+                <div className="Register-lastname">
                 <label name="Lastname">Apellido</label>
                 <input 
                 name="Lastname" 
@@ -45,7 +70,7 @@ export default function Register() {
                 />
                 </div>
 
-                <div>
+                <div className="Register-email">
                 <label name="Email">Correo Electronico</label>
                 <input 
                 name="email" 
@@ -55,7 +80,7 @@ export default function Register() {
                 />
                 </div>
 
-                <div>
+                <div className="Register-password">
                 <label name="Password" >Contraseña</label>
                 <input 
                 name="password" 
@@ -66,6 +91,7 @@ export default function Register() {
                 </div>
                 <button type="submit">Registrar ahora</button>
             </form>
+            {error && <p>{error}</p>}
         </div>
 
     )

@@ -1,7 +1,8 @@
 const initialState = {
   movies: [],
-  movieDetail: {}
-}
+  movieDetail: {},
+};
+
 
 export default function rootReducer(state=initialState, action){
   switch(action.type){
@@ -20,9 +21,11 @@ export default function rootReducer(state=initialState, action){
         ...state,
         movieDetail: {}
       }
+    case "POST_MOVIE":
+      return {
+        ...state,
+      }
     default: 
     return {
       ...state
     }
-  }
-}
