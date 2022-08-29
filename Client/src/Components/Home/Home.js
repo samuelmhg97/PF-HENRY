@@ -12,7 +12,6 @@ import "./Home.css";
 import { useAuth } from "../Context/authContext";
 
 function Home() {
-
   return (
     <div className="home--container">
       <br />
