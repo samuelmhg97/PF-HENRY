@@ -8,17 +8,27 @@ import Billboard from "./../Billboard/Billboard";
 import "./Home.css";
 
 import { useAuth } from "../Context/authContext";
+import {useNavigate} from "react-router-dom"
 
 function Home() {
 
-  const {user} = useAuth()
+  const {user, logOut} = useAuth()
   console.log(user)
+
+  const navigate = useNavigate()
+
+
+  const handleLogOut = async () => {
+    await logOut();
+    navigate("/login")
+  }
   return (
 
     <div>
       <Header />
       <Carrousel />
       <Billboard />
+      <button onClick={handleLogOut}>Log Out</button>
       <SocialMedia />
       <Footer />
     </div>

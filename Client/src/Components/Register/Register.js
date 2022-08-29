@@ -55,6 +55,7 @@ export default function Register() {
                 <div className="Register-name">
                 <label name="Name">Nombre</label>
                 <input 
+                id="Register-name"
                 name="name" 
                 type="text"
                 onChange={(e) => handleChange(e)}
@@ -64,6 +65,7 @@ export default function Register() {
                 <div className="Register-lastname">
                 <label name="Lastname">Apellido</label>
                 <input 
+                id= "Register-lastname"
                 name="Lastname" 
                 type="text"
                 onChange= {(e) => handleChange(e)}
@@ -73,6 +75,7 @@ export default function Register() {
                 <div className="Register-email">
                 <label name="Email">Correo Electronico</label>
                 <input 
+                id="Register-email"
                 name="email" 
                 type="email" 
                 placeholder="email@email.com"
@@ -83,13 +86,14 @@ export default function Register() {
                 <div className="Register-password">
                 <label name="Password" >Contraseña</label>
                 <input 
+                id= "Register-password"
                 name="password" 
                 type="password" 
                 placeholder="6 to 15 characters"
                 onChange= {(e) => handleChange(e)}
                 />
                 </div>
-                <button type="submit">Registrar ahora</button>
+                <button className ="Register-btn" type="submit">Registrar ahora</button>
             </form>
             {error && <p>{error}</p>}
         </div>

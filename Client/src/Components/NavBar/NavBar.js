@@ -1,6 +1,7 @@
 import React from "react";
 import { SearchBar } from "./SearchBar/Searchbar";
 import "./Navbar.css"
+import { useAuth } from "../Context/authContext";
 
 
 function NavBar() {
@@ -16,8 +17,14 @@ function NavBar() {
     image: "https://thumbs.dreamstime.com/b/user-icon-trendy-flat-style-isolated-grey-background-user-symbol-user-icon-trendy-flat-style-isolated-grey-background-123663211.jpg",
     alt: "login"
   }]
+  const {user} = useAuth()
+  
   return (
   <div className="NavBar-container">
+    <div className="NavBar-username">
+      {user && <p>Bienvenido {user.email}</p>}
+    </div>
+    <div className="NavBar-items">
     <select className="NavBar-menu">
       <option className="">Categories</option>
       <option className="">Promotions</option>
@@ -27,6 +34,7 @@ function NavBar() {
       <option className="">Register</option>
     </select>
     <SearchBar/>
+    </div>
     {/* {logo?.map((logo, key)=>{
       return(
         <img className="Searchlogo" src={logo.image} alt={logo.alt} key={key} />

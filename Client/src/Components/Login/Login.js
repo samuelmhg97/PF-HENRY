@@ -16,7 +16,7 @@ export default function Login() {
     const [error, setError] = useState()
 
     const navigate = useNavigate()
-    const {logIn} = useAuth()
+    const {logIn, loginGoogle } = useAuth()
 
     const handleChange = (e) => {
         console.log(e.target.value)
@@ -42,8 +42,11 @@ export default function Login() {
             }
             // setError(error.message)
         }
+    }
+    const handleGoogleSignIn = async () => {
+        await loginGoogle()
+        navigate("/")
 
-        // console.log(user)
     }
     return (
         <div className="Login-container">
@@ -72,7 +75,10 @@ export default function Login() {
                 </div>
                 <button className="Login-btn" type="submit">Ingresar</button>
             </form>
-            {error && <p>{error}</p>}
+            <button onClick={(e) => handleGoogleSignIn(e)}>Log In with Google</button>
+            {error && <p>{error}</p>}  
+            {/* podemos estilizarlo creandolo como componente aparte */}
+            
         </div>
     )
 }

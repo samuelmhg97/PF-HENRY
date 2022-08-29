@@ -1,6 +1,21 @@
 @import url(../../index.css);
+
+
 @media (min-width: 300px){
-    .NavBar-container{
+    .NavBar-container {
+        background-color: var(--violet-semiwhite);
+        display: flex;
+        flex-direction: column;
+
+    }
+    .NavBar-username {
+        display: flex;
+        flex-direction:row;
+        justify-content: flex-end;
+
+        padding-right: 2%;
+    }
+    .NavBar-items{
         background-color: var(--violet-semiwhite);
         display: flex;
         flex-direction: row;
