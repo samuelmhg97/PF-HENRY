@@ -21,6 +21,7 @@ import EditMovie from "./Components/Admin/Movies/EditMovie/EditMovie.js";
 
 import Error from "./Components/Error/Error";
 
+
 function App() {
   //   React.useEffect(() => {
   //   console.log('render home')
@@ -28,7 +29,7 @@ function App() {
 
   return (
     <div className="App">
-      <AuthProvider>
+      {/* <AuthProvider> */}
         <Router>
           <Routes>
             <Route exact path="/" element={<Home />} />
@@ -75,7 +76,7 @@ function App() {
             <Route exact path="/error" element={<Error />} />
           </Routes>
         </Router>
-      </AuthProvider>
+      {/* </AuthProvider> */}
     </div>
   );
 }

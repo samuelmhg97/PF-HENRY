@@ -1,13 +1,11 @@
 @import url(../../index.css);
 
 @media (min-width: 300px) {
-    .Register-container {
+    .Login-container {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
-        user-select: none;
 
         background-color: var(--black);
         opacity: 0.999;
@@ -17,12 +15,9 @@
 
         min-height: 100vh;
         min-width: 80%;
+        
     }
-
-    .Register-title {
-        font-size: 2rem;
-    }
-    .Register-form {
+    .Login-form {
         background-color: var(--violet-semiwhite);
         opacity: 0.85;
 
@@ -41,8 +36,11 @@
         margin-bottom: 20rem;
 
         gap: 3vh;
+        
+
     }
-    .Register-name, .Register-lastname, .Register-email, .Register-password {
+
+    .Login-containerEmail, .Login-containerPassword {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -54,7 +52,7 @@
         gap: 3rem
     }
 
-    #Register-name, #Register-lastname, #Register-email, #Register-password{
+    #Login-email, #Login-password {
         outline: none;
         border-radius: 0.3em;
 
@@ -64,7 +62,7 @@
         transition: 0.5s;
     }
 
-    #Register-name:hover, #Register-lastname:hover, #Register-email:hover, #Register-password:hover {
+    #Login-email:hover, #Login-password:hover {
         cursor: pointer;
         outline: none;
 
@@ -72,7 +70,9 @@
         max-width: 100%;
     }
 
-    .Register-btn {
+
+    .Login-btn{ 
+
         max-height: 2rem;
 
         padding: 1vh;
@@ -86,11 +86,15 @@
 
         transition: 0.9s;
     }
-    .Register-btn:hover {
+
+    .Login-btn:hover {
         cursor: pointer;
         background-color: var(--red);
 
         max-height: 3rem;
     }
-    
 }
+
+/* input{
+    outline: none;
+} */

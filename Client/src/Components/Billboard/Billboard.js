@@ -36,34 +36,36 @@ function Billboard({ getMovies, movies }) {
           // Checkeamos si el estado isVisible es true o false dependiendo del observer
           // <div key={m.movie_id} className={isVisible[index] ? 'billboard--container' : 'billboard--container billboard--container__notrender'} ref={element => movieCards.current[index] = element}>
           // <div key={m.movie_id} className={isVisible[index] ? 'billboard--container' : 'billboard--container billboard--container__notrender'} ref={handleMovieRef}>
-          <div
-            key={m.movie_id}
-            className="billboard--container"
-            ref={handleMovieRef}
-          >
-            <img className="billboard--poster" src={m.poster} alt={m.title} />
-            <div className="billboard--info">
-              <h3 className="billboard--title">
-                {m.title.length > 22
-                  ? m.title.toUpperCase().slice(0, 22).concat("...")
-                  : m.title}
-              </h3>
-              <p className="billboard--description">
-                {m.description.slice(0, 140).concat("...")}
-              </p>
-              {m.comingSoon && (
-                <p className="billboard--comingsoon">PREMIERE</p>
-              )}
-              <div className="billboard--container--button">
-                <button className="billboard--button">
-                  <Link className="billboard--link" to={`/movie/${m.movie_id}`}>
-                    View more
-                  </Link>
-                </button>
-                <button className="billboard--button">Add to cart</button>
-              </div>
+          <Link className="billboard--big--link" to={`/movie/${m.movie_id}`}>
+            <div
+                key={m.movie_id}
+                className="billboard--container"
+                ref={handleMovieRef}
+            >
+                <img className="billboard--poster" src={m.poster} alt={m.title} />
+                <div className="billboard--info">
+                <h3 className="billboard--title">
+                    {m.title.length > 22
+                    ? m.title.toUpperCase().slice(0, 22).concat("...")
+                    : m.title}
+                </h3>
+                <p className="billboard--description">
+                    {m.description.slice(0, 140).concat("...")}
+                </p>
+                {m.comingSoon && (
+                    <p className="billboard--comingsoon">PREMIERE</p>
+                )}
+                <div className="billboard--container--button">
+                    <button className="billboard--button">
+                    <Link className="billboard--link" to={`/movie/${m.movie_id}`}>
+                        View more
+                    </Link>
+                    </button>
+                    <button className="billboard--button">Add to cart</button>
+                </div>
+                </div>
             </div>
-          </div>
+          </Link>
         ))
       ) : (
         <p className="billboard--notfound">No movies available.</p>
