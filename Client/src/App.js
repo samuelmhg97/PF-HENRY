@@ -18,8 +18,8 @@ import DeleteUser from "./Components/Admin/Users/DeleteUser/DeleteUser.js";
 import CreateMovie from "./Components/Admin/Movies/CreateMovie/CreateMovie.js";
 import DeleteMovie from "./Components/Admin/Movies/DeleteMovie/DeleteMovie.js";
 import EditMovie from "./Components/Admin/Movies/EditMovie/EditMovie.js";
-import Footer from "./Components/Footer/Footer";
-import SocialMedia from "./Components/SocialMedia/SocialMedia";
+
+import Error from "./Components/Error/Error";
 
 
 function App() {
@@ -35,11 +35,11 @@ function App() {
             <Route exact path="/" element={<Home />} />
 
             <Route exact path="/movie/:id" element={<MovieDetails />} />
-            <Route exact path="/adminmenu" element={<AdminMenu />} />
             <Route exact path="login" element={<Login />} />
             <Route exact path="register" element={<Register />} />
 
             {/* Admin User Paths */}
+            <Route exact path="/adminmenu" element={<AdminMenu />} />
             <Route exact path="adminmenu/createuser" element={<CreateUser />} />
             <Route
               exact
@@ -70,6 +70,10 @@ function App() {
               path="/adminmenu/deletemovie"
               element={<DeleteMovie />}
             />
+
+            {/* Error Route */}
+
+            <Route exact path="/error" element={<Error />} />
           </Routes>
         </Router>
       {/* </AuthProvider> */}
