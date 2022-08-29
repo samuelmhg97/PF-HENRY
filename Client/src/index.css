@@ -17,9 +17,8 @@ a {
 }
 body{
     box-sizing: border-box;
-    background-color: var(--white)
+    background-color: var(--black)
 }
 
 .root{
-    min-width: 70vw;
 }

@@ -8,6 +8,14 @@
     }
 }
 
+.billboard--main--container{
+    background-color: var(--violet-black);
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .billboard{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -27,14 +35,13 @@
     transition: opacity .75s ease-in;
 }
 
-
 .billboard .billboard--container .billboard--poster{
     width: 50%;
     border-radius: 5px 0 0 5px;
 }
 .billboard .billboard--container .billboard--info{
     width: 50%;
-    margin: 1em;
+    margin: 0.5em;
 }
 .billboard .billboard--container .billboard--info .billboard--title{
     text-align: center;

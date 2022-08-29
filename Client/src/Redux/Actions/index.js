@@ -27,7 +27,10 @@ export function delMovieDetail(){
 
 export function postMovie(payload) {
   return async function (dispatch) {
-    const json = await axios.post(`HTTP://LOCALHOST:3001/`, payload);
+    const json = await axios.post(
+      `http://api-pf-cine.herokuapp.com/movies/create`,
+      payload
+    );
     return json;
   };
 }

@@ -1,28 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Carrousel.css";
+import carrouselImg from "./CarrouselSource";
 
-const carrouselImages = [
-  {
-    image: "https://i.im.ge/2022/08/26/OmzHlr.1.png",
-    url: "https://www.page.com.ar",
-    alt: "Mi vecino totoro",
-  },
-  {
-    image: "https://i.im.ge/2022/08/26/Omzfwf.2.png",
-    url: "https://www.page.com.ar",
-    alt: "Kiki entregas a domicilio",
-  },
-  {
-    image: "https://i.im.ge/2022/08/26/OmzkKm.3.png",
-    url: "https://www.page.com.ar",
-    alt: "El mundo secreto de Arrietty",
-  },
-  {
-    image: "https://i.im.ge/2022/08/26/OmzpiW.4.png",
-    url: "https://www.page.com.ar",
-    alt: "Una voz silenciosa",
-  },
-];
+const carrouselImages = carrouselImg;
 
 const Carrousel = (_carrouselImages) => {
   let intervalTime = 4000;
@@ -61,7 +41,7 @@ const Carrousel = (_carrouselImages) => {
         {"<"}
       </button>
 
-      {carrouselImages.map((carrouselImages, index) => {
+      {carrouselImages?.map((carrouselImages, index) => {
         return (
           <div
             ref={hoverImg}
