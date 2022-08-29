@@ -21,9 +21,8 @@ const requirements = [
   { prop: "classification" },
   { prop: "cast" },
   { prop: "director" },
-  { prop: "writter" },
   { prop: "language" },
-  { prop: "release_year" },
+  { prop: "comingSoon" },
   { prop: "poster" },
 ];
 
@@ -42,9 +41,9 @@ function CreateMovie(_requirements) {
     classification: "",
     cast: [],
     director: "",
-    writter: "",
     language: "",
     poster: "",
+    comingSoon: "",
   });
 
   function handleChange(e) {
@@ -56,6 +55,13 @@ function CreateMovie(_requirements) {
   }
 
   function handleSubmit(e) {
+    //Esto funciona, increiblemente :D
+    input.genre = [input.genre];
+    input.cast = [input.cast];
+    input.display = [input.display];
+
+    console.log(input);
+
     e.preventDefault();
     dispatch(postMovie(input));
     alert("Movie Created!");
@@ -99,9 +105,9 @@ function CreateMovie(_requirements) {
                     key={value}
                     className="create--movie--form--input"
                     type="text"
-                    value={input[value]}
+                    value={input.value}
                     name={req.prop}
-                    required
+                    // required
                     placeholder={`insert ${req.prop}`}
                     onChange={(e) => handleChange(e)}
                   />
