@@ -11,51 +11,51 @@ const iconSource = [
   {
     id: 1,
     image: ico1,
-    url: "http://wwww.facebook.com/",
+    url: "http://www.facebook.com/",
     alt: "Go to Facebook",
   },
   {
     id: 2,
     image: ico2,
-    url: "http://wwww.instagram.com/",
+    url: "http://www.instagram.com/",
     alt: "Go to Instagram",
   },
   {
     id: 3,
     image: ico3,
-    url: "http://wwww.linkedin.com/",
+    url: "http://www.linkedin.com/",
     alt: "Go to Linkedin",
   },
   {
     id: 4,
     image: ico5,
-    url: "http://wwww.tiktok.com/",
+    url: "http://www.tiktok.com/",
     alt: "Go to TikTok",
   },
   {
     id: 5,
     image: ico6,
-    url: "http://wwww.twitter.com/",
+    url: "http://www.twitter.com/",
     alt: "Go to Twitter",
   },
 
   {
     id: 6,
     image: ico8,
-    url: "http://wwww.youtube.com/",
+    url: "http://www.youtube.com/",
     alt: "Go to YouTube",
   },
   {
     id: 7,
     image: ico7,
-    url: "http://wwww.whatsapp.com/",
+    url: "http://www.whatsapp.com/",
     alt: "Go to Whatsapp",
   },
 
   {
     id: 8,
     image: ico4,
-    url: "http://wwww.telegram.com/",
+    url: "https://telegram.org",
     alt: "Go to Telegram",
   },
 ];

@@ -12,16 +12,18 @@ const userIcon = iconSource[4];
 function Header() {
   return (
     <div className="header--container">
-      <div className="header--menu--ico">
-        <img src={plusIcon.image} alt={plusIcon.alt} />
-      </div>
+      <div className="header">
+        <div className="header--menu--ico">
+          <img src={plusIcon.image} alt={plusIcon.alt} />
+        </div>
 
-      <div className="header--logo--menu">
-        <img src={logoCinema} />
-      </div>
+        <div className="header--logo--menu">
+          <img src={logoCinema} />
+        </div>
 
-      <div className="header--user--ico">
-        <img src={userIcon.image} alt={userIcon.alt} />
+        <div className="header--user--ico">
+          <img src={userIcon.image} alt={userIcon.alt} />
+        </div>
       </div>
     </div>
   );

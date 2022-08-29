@@ -19,6 +19,8 @@
 .socialMedia--logo{
   width: 4rem;  
   margin: 0.5rem;
+  
+  transition: all 0.2s ease-in-out;
 }
 
 .socialMedia--logo:hover{

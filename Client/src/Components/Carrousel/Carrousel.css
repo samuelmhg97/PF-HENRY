@@ -26,16 +26,17 @@
 
 .carrousel--image--active{
   opacity: 1;
-	transition: all 1s ease-out;
+	transition: all 2s ease-out;
   max-height: fit-content;
 }
 
 .carrousel--image--inactive{
   opacity: 0;
-	transition: all 1s ease-out;
+	transition: all 2s ease-out;
 }
 
 .carrousel--image{
+  
   height: 200px;
   width: 650px;
 }
