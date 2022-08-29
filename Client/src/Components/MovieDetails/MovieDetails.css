@@ -8,6 +8,7 @@
     padding: 0.5em;
     color: var(--white);
     text-align: center;
+    user-select: none;
 }
 .movie--detail--teaser{
     width: 100%;
