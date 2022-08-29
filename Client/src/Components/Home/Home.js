@@ -9,11 +9,10 @@ import Footer from "../Footer/Footer";
 
 import "./Home.css";
 
-// import { useAuth } from "../Context/auth";
+import { useAuth } from "../Context/authContext";
 
 function Home() {
-  //const authContext = useAuth()
-  //console.log(authContext)
+
   return (
     <div className="home--container">
       <br />

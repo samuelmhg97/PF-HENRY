@@ -1,0 +1,33 @@
+@import url(../../index.css);
+
+@media (min-width: 300px) {
+    .Register-container {
+        background-color: #F5F5F5;
+
+        height: 80vh;
+
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Register-title {
+        font-size: 2rem;
+    }
+    .Register-form {
+        height: 20rem;
+        width: 80%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .Register-name, .Register-lastname, .Register-email, .Register-password {
+        display: flex;
+        flex-direction: center;
+        justify-content: space-between;
+    }
+
+}

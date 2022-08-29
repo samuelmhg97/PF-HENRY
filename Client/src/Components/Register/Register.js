@@ -2,6 +2,8 @@ import { useState } from "react"
 import { useAuth } from "../Context/authContext"
 import {useNavigate} from "react-router-dom"
 
+import "../Register/Register.css"
+
 export default function Register() {
 
     const [user, setUser] = useState({
@@ -24,21 +26,33 @@ export default function Register() {
         })
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault() 
+        setError("")
         try{
-            signUp(user.email, user.password)
+            await signUp(user.email, user.password);
+            navigate("/adminmenu");
         } catch(error){
             console.log(error.message)
+            if(error.code === "auth/invalid-email") {
+                setError("Correo inválido")
+            }
+            if(error.code === "auth/weak-password") {
+                setError("Contraseña inválida")
+            }
+            if(error.code === "auth/email-already-in-use") {
+                setError("Usuario ya registrado")
+            }
+            // setError(error.message)
         }
 
         // console.log(user)
     }
     return (
-        <div>
-            <div>Register</div>
-            <form onSubmit={(e) => handleSubmit(e)}>
-                <div>
+        <div className="Register-container">
+            <h1 className="Register-title">Register</h1>
+            <form className="Register-form" onSubmit={(e) => handleSubmit(e)}>
+                <div className="Register-name">
                 <label name="Name">Nombre</label>
                 <input 
                 name="name" 
@@ -47,7 +61,7 @@ export default function Register() {
                 />
                 </div>
 
-                <div>
+                <div className="Register-lastname">
                 <label name="Lastname">Apellido</label>
                 <input 
                 name="Lastname" 
@@ -56,7 +70,7 @@ export default function Register() {
                 />
                 </div>
 
-                <div>
+                <div className="Register-email">
                 <label name="Email">Correo Electronico</label>
                 <input 
                 name="email" 
@@ -66,7 +80,7 @@ export default function Register() {
                 />
                 </div>
 
-                <div>
+                <div className="Register-password">
                 <label name="Password" >Contraseña</label>
                 <input 
                 name="password" 
@@ -77,7 +91,7 @@ export default function Register() {
                 </div>
                 <button type="submit">Registrar ahora</button>
             </form>
-            {error && <h6>{error}</h6>}
+            {error && <p>{error}</p>}
         </div>
 
     )

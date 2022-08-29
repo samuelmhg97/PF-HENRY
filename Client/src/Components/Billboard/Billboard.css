@@ -34,13 +34,6 @@
     opacity: 1;
     transition: opacity .75s ease-in;
 }
-/* MODIFICADOR DE LA CARD DE LA PELICULA, SI NO SE VE EN EL VIEWPORT NO SE RENDERIZA */
-
-/* .billboard .billboard--container__notrender{
-    opacity: 0;
-    transition: opacity 1s ease-in;
-}
- */
 
 .billboard .billboard--container .billboard--poster{
     width: 50%;
@@ -106,4 +99,45 @@
     box-shadow: 0px 0px 10px 0px var(--black);
     -webkit-box-shadow: 0px 0px 10px 0px var(--black);
     -moz-box-shadow: 0px 0px 10px 0px var(--black);
+}
+
+/* TABLET Y DESKTOP */
+@media screen and (min-width: 835px) {
+    .billboard{
+        margin: 2em auto;
+        gap: 2em;
+        width: 80vw;
+    }
+    .billboard .billboard--container{
+        flex-direction: column;
+        height: 100%;
+        margin: 0 auto;
+        max-width: 300px;
+    }
+    .billboard .billboard--container .billboard--info, .billboard .billboard--container .billboard--poster{
+        width: auto;
+    }
+    .billboard--info{
+        height: 15em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .billboard--container--button{
+        position: inherit;
+        gap: 1em;
+        justify-content: center;
+        margin: 1em 0 0 0;
+    }
+    .billboard--button {
+        width: 50%;
+    }
+}
+/* MOBILE */
+@media screen and (max-width: 550px) {
+    /* MODIFICADOR DE LA CARD DE LA PELICULA, SI NO SE VE EN EL VIEWPORT NO SE RENDERIZA */
+    .billboard .billboard--container__notrender{
+        opacity: 0;
+        transition: opacity 1s ease-in;
+    }
 }
