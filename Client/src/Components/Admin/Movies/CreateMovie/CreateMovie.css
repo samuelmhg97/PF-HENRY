@@ -2,7 +2,8 @@
   display: flex;
   justify-content: center;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
+  color: var(--white);
+  user-select: none;
 }
 .create--movie{
   min-width: 50rem;
@@ -14,9 +15,23 @@
   border-radius: 3%;
 }
 .create--movie--form{
+  color: var(--white);
   display: flex;
   flex-direction: column;
 }
-.create--movie--form--input{}
-.create--movie--submit--button{}
-.go--back--button{}
+
+.create--movie--form--titles{
+  pointer-events:none;
+}
+
+.create--movie--text{
+  pointer-events: none;
+}
+
+.create--movie--form--input{
+
+}
+
+.create--movie--button{
+  
+}

@@ -10,6 +10,7 @@
   max-width: fit-content;
   
   background-color: var(--violet-black);
+  user-select: none;
 }
 
 .socialMedia--logo--container{

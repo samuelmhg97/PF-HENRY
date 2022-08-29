@@ -8,6 +8,7 @@
     padding: 0.5em;
     color: var(--white);
     text-align: center;
+    user-select: none;
 }
 .movie--detail--teaser{
     width: 100%;
@@ -20,6 +21,7 @@
     color: var(--black);
     padding: .5em 0;
     font-weight: bold;
+    font-family: 'Oswald';
 }
 
 /* DESDE ACA TODA LA INFORMACIÓN */
@@ -84,4 +86,11 @@
     color: var(--violet-white);
     list-style-type: none;
     margin: .5em 0;
+}
+
+/* DISEÑO DESKTOP */
+@media screen and (min-width: 835px) {
+    .movie--detail--container{
+        margin: 2em 12em;
+    }
 }

@@ -3,6 +3,7 @@
 .header--container{
   min-width: 100%;
   background-color: var(--violet-black);
+  user-select: none;
 }
 
 .header{  
