@@ -11,7 +11,21 @@ import "./Home.css";
 
 import { useAuth } from "../Context/authContext";
 
+import {useNavigate} from "react-router-dom"
+
 function Home() {
+
+  const {user, logOut} = useAuth()
+  console.log(user)
+
+  const navigate = useNavigate()
+
+
+  const handleLogOut = async () => {
+    await logOut();
+    navigate("/login")
+  }
+
   return (
     <div className="home--container">
       <br />
@@ -22,7 +36,8 @@ function Home() {
       <Carrousel />
       <br />
       <Billboard />
-      <br />
+<button onClick={handleLogOut}>Log Out</button>
+
       <SocialMedia />
       <br />
       <Footer />

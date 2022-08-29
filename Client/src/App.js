@@ -21,6 +21,7 @@ import EditMovie from "./Components/Admin/Movies/EditMovie/EditMovie.js";
 import Footer from "./Components/Footer/Footer";
 import SocialMedia from "./Components/SocialMedia/SocialMedia";
 
+
 function App() {
   //   React.useEffect(() => {
   //   console.log('render home')
