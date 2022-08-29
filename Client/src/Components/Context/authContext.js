@@ -10,9 +10,9 @@ export const useAuth = () => {
 }
 
 export function AuthProvider({children}) {
-//const user = {
-//login: true
-//}
+// const user = {
+// login: true
+// }
     const [user, setUser] = useState(null)
     const signUp =  (email, password) => createUserWithEmailAndPassword(auth, email, password)
     const logIn = (email, password) => signInWithEmailAndPassword(auth, email, password)

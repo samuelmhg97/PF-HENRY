@@ -28,7 +28,7 @@ function App() {
 
   return (
     <div className="App">
-      <AuthProvider>
+      {/* <AuthProvider> */}
         <Router>
           <Routes>
             <Route exact path="/" element={<Home />} />
@@ -71,7 +71,7 @@ function App() {
             />
           </Routes>
         </Router>
-      </AuthProvider>
+      {/* </AuthProvider> */}
     </div>
   );
 }
