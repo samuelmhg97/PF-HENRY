@@ -15,3 +15,7 @@ body{
     box-sizing: border-box;
     background-color: var(--white)
 }
+
+.root{
+    min-width: 70vw;
+}

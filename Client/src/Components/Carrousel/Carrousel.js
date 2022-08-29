@@ -1,7 +1,5 @@
-import React, { useState, useEffect, useTransition } from "react";
-
-const intervalTime = 1500;
-const autoScroll = true;
+import React, { useState, useEffect, useRef } from "react";
+import "./Carrousel.css";
 
 const carrouselImages = [
   {
@@ -27,7 +25,11 @@ const carrouselImages = [
 ];
 
 const Carrousel = (_carrouselImages) => {
-  let slideInterval;
+  let intervalTime = 4000;
+  let autoScroll = true;
+  let hoverImg = useRef(null);
+
+  let slideInterval = useRef(null);
 
   const [current, setCurrent] = useState(0);
 
@@ -41,34 +43,33 @@ const Carrousel = (_carrouselImages) => {
     setCurrent(current === length - 1 ? 0 : current + 1);
   };
 
-  function auto() {
-    slideInterval = setInterval(nextImg, intervalTime);
-  }
-
   useEffect(() => {
     setCurrent(0);
   }, []);
 
   useEffect(() => {
     if (autoScroll) {
-      auto();
+      slideInterval.current = setInterval(nextImg, intervalTime);
     }
-    return () => clearInterval(slideInterval);
-  }, [current]);
+
+    return () => clearInterval(slideInterval.current);
+  }, [autoScroll, slideInterval, nextImg]);
 
   return (
-    <div className="carrousel">
+    <div className="carrousel--container">
       <button className="carrousel--left--arrow" onClick={prevImg}>
         {"<"}
-      </button>
-      <button className="carrousel--right--arrow" onClick={nextImg}>
-        {">"}
       </button>
 
       {carrouselImages.map((carrouselImages, index) => {
         return (
           <div
-            className={index === current ? "slide active" : "slide"}
+            ref={hoverImg}
+            className={
+              index === current
+                ? "carrousel--image--active"
+                : "carrousel--image--inactive"
+            }
             key={index}
           >
             {index === current && (
@@ -76,13 +77,17 @@ const Carrousel = (_carrouselImages) => {
                 <img
                   src={carrouselImages.image}
                   alt={carrouselImages.alt}
-                  className="image"
+                  className="carrousel--image"
                 />
               </a>
             )}
           </div>
         );
       })}
+
+      <button className="carrousel--right--arrow" onClick={nextImg}>
+        {">"}
+      </button>
     </div>
   );
 };
