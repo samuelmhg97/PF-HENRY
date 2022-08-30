@@ -1,6 +1,6 @@
 import React from "react";
 
-import { SearchBar } from "./SearchBar/Searchbar";
+import { SearchBar } from "../NavBar/SearchBar/SearchBar";
 import "./Navbar.css"
 import { useAuth } from "../Context/authContext";
 

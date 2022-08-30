@@ -2,7 +2,6 @@ import React from "react";
 
 import {Link} from "react-router-dom"
 
-import { Link } from "react-router-dom";
 
 import logos from "../../Images/Images";
 import iconSource from "../../Icons/iconSource.js";

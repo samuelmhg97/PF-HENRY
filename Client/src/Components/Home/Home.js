@@ -36,7 +36,7 @@ function Home() {
       <Carrousel />
       <br />
       <Billboard />
-<button onClick={handleLogOut}>Log Out</button>
+    <button onClick={handleLogOut}>Log Out</button>
 
       <SocialMedia />
       <br />

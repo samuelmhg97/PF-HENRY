@@ -34,6 +34,7 @@ export default function Register() {
         setError("")
         try{
             await signUp(user.email, user.password);
+            // await 
             navigate("/adminmenu");
         } catch(error){
             console.log(error.message)
@@ -60,7 +61,7 @@ export default function Register() {
             <h1 className="Register-title">Register</h1>
             <form className="Register-form" onSubmit={(e) => handleSubmit(e)}>
                 <div className="Register-name">
-                <label name="Name">Nombre</label>
+                <label name="Name">Username</label>
                 <input 
                 id="Register-name"
                 name="name" 
@@ -69,7 +70,7 @@ export default function Register() {
                 />
                 </div>
 
-                <div className="Register-lastname">
+                {/* <div className="Register-lastname">
                 <label name="Lastname">Apellido</label>
                 <input 
                 id= "Register-lastname"
@@ -77,7 +78,7 @@ export default function Register() {
                 type="text"
                 onChange= {(e) => handleChange(e)}
                 />
-                </div>
+                </div> */}
 
                 <div className="Register-email">
                 <label name="Email">Correo Electronico</label>
