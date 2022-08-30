@@ -3,6 +3,7 @@ import React from "react";
 import { SearchBar } from "../NavBar/SearchBar/SearchBar";
 import "./Navbar.css"
 import { useAuth } from "../Context/authContext";
+import { useNavigate } from "react-router-dom";
 
 
 function NavBar() {
@@ -18,22 +19,31 @@ function NavBar() {
     image: "https://thumbs.dreamstime.com/b/user-icon-trendy-flat-style-isolated-grey-background-user-symbol-user-icon-trendy-flat-style-isolated-grey-background-123663211.jpg",
     alt: "login"
   }]
-  const {user} = useAuth()
-  
+  const {user, logOut} = useAuth()
+  const navigate = useNavigate()
+  const handleLogOut = async () => {
+    await logOut();
+    navigate("/login")
+  }
   return (
   <div className="NavBar-container">
     <div className="NavBar-username">
-      {user && <p>Bienvenido {user.email}</p>}
+      {user && (
+        <div className="User-Id">
+          <p className="User-optionesname">Bienvenido {user.email}</p>
+          <button className="User-optionsbtn" onClick={(e) => handleLogOut(e)}>Log Out</button>
+      </div>
+      )}
     </div>
     <div className="NavBar-items">
-    <select className="NavBar-menu">
+    {/* <select className="NavBar-menu">
       <option className="">Categories</option>
       <option className="">Promotions</option>
       <option className="">Acerca De</option>
       <option className="">Ayuda</option>
       <option className="">Log In</option>
       <option className="">Register</option>
-    </select>
+    </select> */}
     <SearchBar/>
     </div>
     {/* {logo?.map((logo, key)=>{

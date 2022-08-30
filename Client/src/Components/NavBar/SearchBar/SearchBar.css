@@ -1,2 +1,48 @@
 @import url(../../../index.css);
 
+@media (min-width: 300px){
+    .SearchBar-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        min-height: 2rem;
+
+        gap: 0.6em;
+    }
+    .SearchBar-input {
+        outline: none;
+        border-radius: 0.3em;
+
+        max-height: 80%;
+        max-width: 80%;
+
+        transition: 0.5s;
+    }
+    .SearchBar-input {
+        cursor: pointer;
+        outline: none;
+
+        max-height: 100%;
+        max-width: 100%;
+    }
+    .SearchBar-btn{
+        max-height: 2rem;
+
+        padding: 1vh;
+
+        border: none;
+        border-radius: 99rem;
+
+        background-color: var(--red);
+
+        color: var(--white);
+
+        transition: 0.9s;
+    }
+    .SearchBar-btn:hover{
+        cursor: pointer;
+        background-color: var(--black);
+
+    }
+}
