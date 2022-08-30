@@ -33,7 +33,7 @@ function MovieDetails({ getMovieDetail, delMovieDetail, movieDetail }) {
     getMovieDetail(id);
   },[getMovieDetail, delMovieDetail, id])
   if(Object.keys(movieDetail).length > 1){
-    console.log(movieDetail.teaser.split('/')[movieDetail.teaser.split('/').length - 1])
+    console.log(movieDetail.teaser.split('?v=')[movieDetail.teaser.split('?v=').length - 1])
 
   }
   
@@ -43,7 +43,7 @@ function MovieDetails({ getMovieDetail, delMovieDetail, movieDetail }) {
         <div className='movie--detail--container'>
           <h2 className='movie--detail--title'>{movieDetail.title.toUpperCase()}</h2>
           {/* Cambiando el dato del movieDetail.teaser para que sea la URL que se puede usar como reproductor */}
-          <iframe className='movie--detail--teaser' src={`https://www.youtube.com/embed/${movieDetail.teaser.split('/')[movieDetail.teaser.split('/').length - 1]}`} title={`Trailer of ${movieDetail.title}`} allowFullScreen frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+          <iframe className='movie--detail--teaser' src={`https://www.youtube.com/embed/${movieDetail.teaser.split('?v=')[movieDetail.teaser.split('?v=').length - 1]}`} title={`Trailer of ${movieDetail.title}`} allowFullScreen frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
 
           {/* TODA LA INFORMACIÓN */}
           <div className='movie--detail--info'>
