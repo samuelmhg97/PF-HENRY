@@ -19,6 +19,16 @@ export function getMovieDetail(id){
     }
 }
 
+export function getMovieName(name) {
+  return async function(dispatch) {
+    const json = await axios.get(`http://localhost:3001/movies?name=${name}`)
+    return dispatch({
+      type: "GET_MOVIE_NAME",
+      payload: json.data
+    })
+  }
+}
+
 export function delMovieDetail(){
     return {
         type: 'DEL_MOVIE_DETAIL'

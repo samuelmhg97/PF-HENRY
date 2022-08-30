@@ -8,7 +8,6 @@ export default function Register() {
 
     const [user, setUser] = useState({
         name: "",
-        Lastname: "",
         email: "",
         password: ""
     })
@@ -33,7 +32,7 @@ export default function Register() {
         e.preventDefault() 
         setError("")
         try{
-            await signUp(user.email, user.password);
+            await signUp(user.email, user.password, user.name);
             // await 
             navigate("/adminmenu");
         } catch(error){
