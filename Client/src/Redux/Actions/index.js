@@ -44,3 +44,10 @@ export function postMovie(payload) {
     return json;
   };
 }
+
+export function filterMovies(filtro){
+  return {
+    type: 'FILTER_MOVIES',
+    payload: filtro
+  }
+}

@@ -108,10 +108,13 @@
     .billboard--big--link{
         color: var(--violet-white);
         border-radius: 15px;
+        transform: scale(1, 1);
+        transition: transform .3s;
     }
     .billboard--big--link:hover{
         color: var(--white);
         background-color: var(--violet-black);
+        transform: scale(1.1,1.1);
         transition: .3s;
     }
     .billboard{

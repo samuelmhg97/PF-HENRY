@@ -65,6 +65,7 @@
     width: 50%;
     font-weight: bold;
     color: var(--white);
+    border-radius: 5px;
 }.movie--detail--container--button:hover{
     background-color: var(--violet-black);
     cursor: pointer;

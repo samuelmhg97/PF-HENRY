@@ -6,6 +6,7 @@ import Carrousel from "../Carrousel/Carrousel";
 import Billboard from "./../Billboard/Billboard";
 import SocialMedia from "../SocialMedia/SocialMedia";
 import Footer from "../Footer/Footer";
+import FilterBy from './../FilterBy/FilterBy';
 
 import "./Home.css";
 
@@ -31,9 +32,10 @@ function Home() {
       <br />
       <Header />
       <br />
-      <NavBar />
-      <br />
       <Carrousel />
+      <br />
+      <NavBar />
+      <FilterBy />
       <br />
       <Billboard />
     <button onClick={handleLogOut}>Log Out</button>
