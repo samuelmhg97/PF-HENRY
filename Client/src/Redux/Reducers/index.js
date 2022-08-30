@@ -15,6 +15,11 @@ export default function rootReducer(state = initialState, action) {
         ...state,
         movieDetail: action.payload,
       };
+    case "GET_MOVIE_NAME":
+      return {
+        ...state,
+        movies: action.payload
+      }
     case "DEL_MOVIE_DETAIL":
       return {
         ...state,
